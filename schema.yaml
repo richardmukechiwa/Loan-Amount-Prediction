@@ -1,1 +1,16 @@
-key: value
+COLUMNS:
+ Id: int
+ Age :  int
+ Income: int
+ Home: string
+ Emp_length: int
+ Intent: string
+ Rate: float  
+ Status: int
+ Percent_income: float
+ Default: string
+ Cred_length: int
+
+
+ TARGET_COLUMN: 
+ name:  Amount
