@@ -1,10 +1,11 @@
 #updating the components
 import os
-import urllib.request as request cc
+import urllib.request as request
 import zipfile
-from credit_risk import logger
 from credit_risk.utils.common import get_size
-from pathlib import path
+from pathlib import Path
+from credit_risk import logger
+from credit_risk.entity.config_entity import DataIngestionConfig
 
 #creating data ingestion class
 class DataIngestion:
