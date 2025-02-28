@@ -13,5 +13,6 @@ types-pyYAML
 streamlit
 Flask
 Flask-Cors
+seaborn
 pyproject.toml
 -e .
