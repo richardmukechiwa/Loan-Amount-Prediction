@@ -10,6 +10,7 @@ COLUMNS:
  Percent_income: float
  Default: string
  Cred_length: int
+ Amount: float
 
 
  TARGET_COLUMN: 
