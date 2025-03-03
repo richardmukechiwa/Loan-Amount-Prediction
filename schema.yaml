@@ -13,5 +13,5 @@ COLUMNS:
  Amount: float
 
 
- TARGET_COLUMN: 
+TARGET_COLUMN: 
  name:  Amount
