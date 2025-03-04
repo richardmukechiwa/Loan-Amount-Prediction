@@ -59,20 +59,29 @@ open up your local host and port
 ### dagshub
 [dagshub](https://dagshub.com/)
 
-MLFLOW_TRACKING_URL=https://dagshub.com/https://github.com/richardmukechiwa/Loan-Amount-Prediction\
-MLFLOW_TRACKING_USERNAME=richardmukechiwa \
-MLFLOW_TRACKING_PASSWORD=
-python script.py
+import dagshub
+dagshub.init(repo_owner='richardmukechiwa', repo_name='Loan-Amount-Prediction', mlflow=True)
+
+import mlflow
+with mlflow.start_run():
+  mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
 
 Run this to export as env variables:
 
 ```python
 
-export MLFLOW_TRACKING_URL=https://dagshub.com/https://github.com/richardmukechiwa/Loan-Amount-Prediction
+import dagshub
+import mlflow
 
-export MLFLOW_TRACKING_USERNAME=richard mukechiwa
+# Initialize DagsHub MLflow tracking (automatically sets tracking URI)
+dagshub.init(repo_owner='richardmukechiwa', repo_name='Loan-Amount-Prediction', mlflow=True)
 
-export MLFLOW_TRACKING_PASSWORD = 
+# Start an MLflow experiment
+with mlflow.start_run():
+    mlflow.log_param('model_type', 'Linear Regression')
+    mlflow.log_metric('rmse', 0.25)  # Example metric
 
+print("MLflow tracking initialized successfully!")
 ```
 
