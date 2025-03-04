@@ -14,5 +14,6 @@ streamlit
 Flask
 Flask-Cors
 seaborn
+dagshub
 pyproject.toml
 -e .
