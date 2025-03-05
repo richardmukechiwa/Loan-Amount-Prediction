@@ -33,3 +33,13 @@ class ModelTrainerConfig:
     fit_intercept: bool
     n_jobs: int
     target_column: float
+    
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path: Path
+    model_path: Path
+    all_params: dict
+    metric_file_name:Path
+    target_column: str
+    mlflow_uri:str
