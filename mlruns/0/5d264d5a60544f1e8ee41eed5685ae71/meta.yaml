@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/5d264d5a60544f1e8ee41eed5685ae71/artifacts
+end_time: 1741200950686
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5d264d5a60544f1e8ee41eed5685ae71
+run_name: entertaining-pig-615
+run_uuid: 5d264d5a60544f1e8ee41eed5685ae71
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741200946504
+status: 4
+tags: []
+user_id: RICH-1

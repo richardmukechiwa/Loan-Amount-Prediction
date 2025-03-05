@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Amount Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center">Loan Amount Prediction</h2>
+        <form id="prediction-form">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Age:</label>
+                    <input type="number" class="form-control" id="age" required>
+                </div>
+                <div class="col-md-6">
+                    <label>Income:</label>
+                    <input type="number" class="form-control" id="income" required>
+                </div>
+                <div class="col-md-6">
+                    <label>Home Ownership:</label>
+                    <select class="form-control" id="home">
+                        <option value="RENT">RENT</option>
+                        <option value="OWN">OWN</option>
+                        <option value="MORTGAGE">MORTGAGE</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label>Employment Length:</label>
+                    <input type="number" class="form-control" id="emp_length" required>
+                </div>
+                <div class="col-md-6">
+                    <label>Intent:</label>
+                    <select class="form-control" id="intent">
+                        <option value="PERSONAL">PERSONAL</option>
+                        <option value="EDUCATION">EDUCATION</option>
+                        <option value="MEDICAL">MEDICAL</option>
+                        <option value="VENTURE">VENTURE</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label>Rate:</label>
+                    <input type="number" step="0.01" class="form-control" id="rate" required>
+                </div>
+                <div class="col-md-6">
+                    <label>Status:</label>
+                    <select class="form-control" id="status">
+                        <option value="1">Approved</option>
+                        <option value="0">Rejected</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label>Percent Income:</label>
+                    <input type="number" step="0.01" class="form-control" id="percent_income" required>
+                </div>
+                <div class="col-md-6">
+                    <label>Default:</label>
+                    <select class="form-control" id="default">
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label>Credit Length:</label>
+                    <input type="number" class="form-control" id="cred_length" required>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="button" class="btn btn-primary" onclick="predictAmount()">Predict</button>
+            </div>
+        </form>
+
+        <div class="mt-4">
+            <h4>Predicted Amount: <span id="prediction-result" class="text-success"></span></h4>
+        </div>
+    </div>
+
+    <script>
+        function predictAmount() {
+            let inputData = {
+                age: $("#age").val(),
+                income: $("#income").val(),
+                home: $("#home").val(),
+                emp_length: $("#emp_length").val(),
+                intent: $("#intent").val(),
+                rate: $("#rate").val(),
+                status: $("#status").val(),
+                percent_income: $("#percent_income").val(),
+                default: $("#default").val(),
+                cred_length: $("#cred_length").val()
+            };
+
+            // Simulated Prediction (Replace with actual API call)
+            let predictedAmount = Math.random() * 50000 + 5000;
+            $("#prediction-result").text(predictedAmount.toFixed(2));
+        }
+    </script>
+</body>
+</html>
