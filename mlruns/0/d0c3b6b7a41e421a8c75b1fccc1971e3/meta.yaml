@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/d0c3b6b7a41e421a8c75b1fccc1971e3/artifacts
+end_time: 1741384427882
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d0c3b6b7a41e421a8c75b1fccc1971e3
+run_name: thundering-ram-707
+run_uuid: d0c3b6b7a41e421a8c75b1fccc1971e3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741384422818
+status: 3
+tags: []
+user_id: RICH-1
