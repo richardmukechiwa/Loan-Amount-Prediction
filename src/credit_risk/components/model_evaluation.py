@@ -26,6 +26,10 @@ class ModelEvaluation:
         test_data = pd.read_csv(self.config.test_data_path)
         model=joblib.load(self.config.model_path)
         
+        
+        test_data.dropna(inplace=True)
+        
+        
         test_x=test_data.drop([self.config.target_column], axis=1)
         test_y= test_data[[self.config.target_column]]
         

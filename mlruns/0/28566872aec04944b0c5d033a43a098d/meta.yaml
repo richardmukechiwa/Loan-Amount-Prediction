@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/28566872aec04944b0c5d033a43a098d/artifacts
+end_time: 1741384176619
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 28566872aec04944b0c5d033a43a098d
+run_name: magnificent-owl-865
+run_uuid: 28566872aec04944b0c5d033a43a098d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741384176584
+status: 4
+tags: []
+user_id: RICH-1
