@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/902388d5c6704181be100f9848730e82/artifacts
+end_time: 1741469754267
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 902388d5c6704181be100f9848730e82
+run_name: unleashed-dove-272
+run_uuid: 902388d5c6704181be100f9848730e82
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741469754234
+status: 3
+tags: []
+user_id: RICH-1

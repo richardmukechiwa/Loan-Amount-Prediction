@@ -53,8 +53,8 @@ class ModelEvaluation:
             mlflow.log_metric("mae", mae)
             
             #Model registry does not work with file store
-            if tracking_url_type_store != "file":
-                mlflow.sklearn.log_model(model, "model", registered_model_name="LinearRegression")
-            else:
-                mlflow.sklearn.log_model(model, "model")      
+            #if tracking_url_type_store != "file":
+                #mlflow.sklearn.log_model(model, "model", registered_model_name="LinearRegression")
+            #else:
+                #mlflow.sklearn.log_model(model, "model")      
     

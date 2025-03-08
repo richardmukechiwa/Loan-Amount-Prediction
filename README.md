@@ -60,6 +60,16 @@ open up your local host and port
 
 [dagshub](https://dagshub.com/)
 
+https://dagshub.com/richardmukechiwa/Loan-Amount-Prediction.mlflow
+
+import dagshub
+dagshub.init(repo_owner='richardmukechiwa', repo_name='Loan-Amount-Prediction', mlflow=True)
+
+import mlflow
+with mlflow.start_run():
+  mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
+
 Run this to export as env variables:
 
 ```python

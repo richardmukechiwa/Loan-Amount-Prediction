@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/bc16ad353dc84ae18bb6509a52842df4/artifacts
+end_time: 1741469099847
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bc16ad353dc84ae18bb6509a52842df4
+run_name: unequaled-stoat-497
+run_uuid: bc16ad353dc84ae18bb6509a52842df4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741469099810
+status: 3
+tags: []
+user_id: RICH-1

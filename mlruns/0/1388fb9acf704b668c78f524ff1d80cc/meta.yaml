@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/1388fb9acf704b668c78f524ff1d80cc/artifacts
+end_time: 1741469180963
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1388fb9acf704b668c78f524ff1d80cc
+run_name: thoughtful-quail-579
+run_uuid: 1388fb9acf704b668c78f524ff1d80cc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741469180931
+status: 3
+tags: []
+user_id: RICH-1

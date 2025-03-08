@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/241c0d82bcca429fae9d11931a64fe82/artifacts
+end_time: 1741467819260
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 241c0d82bcca429fae9d11931a64fe82
+run_name: loud-snail-361
+run_uuid: 241c0d82bcca429fae9d11931a64fe82
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741467819217
+status: 3
+tags: []
+user_id: RICH-1
