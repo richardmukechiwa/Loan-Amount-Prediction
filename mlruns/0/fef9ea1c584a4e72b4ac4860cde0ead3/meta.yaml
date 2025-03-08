@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/fef9ea1c584a4e72b4ac4860cde0ead3/artifacts
+end_time: 1741469540456
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fef9ea1c584a4e72b4ac4860cde0ead3
+run_name: legendary-skink-813
+run_uuid: fef9ea1c584a4e72b4ac4860cde0ead3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741469540422
+status: 3
+tags: []
+user_id: RICH-1

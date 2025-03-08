@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/dfabb3cf918c4d68ad666d763306a754/artifacts
+end_time: 1741471531062
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dfabb3cf918c4d68ad666d763306a754
+run_name: youthful-mole-287
+run_uuid: dfabb3cf918c4d68ad666d763306a754
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741471531030
+status: 3
+tags: []
+user_id: RICH-1

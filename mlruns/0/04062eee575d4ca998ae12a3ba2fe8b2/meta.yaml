@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/04062eee575d4ca998ae12a3ba2fe8b2/artifacts
+end_time: 1741468211564
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 04062eee575d4ca998ae12a3ba2fe8b2
+run_name: valuable-fowl-149
+run_uuid: 04062eee575d4ca998ae12a3ba2fe8b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741468211527
+status: 3
+tags: []
+user_id: RICH-1

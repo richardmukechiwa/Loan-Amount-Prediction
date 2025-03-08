@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/092d2412a2f148e1a5c8627521455f2c/artifacts
+end_time: 1741470233479
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 092d2412a2f148e1a5c8627521455f2c
+run_name: victorious-pug-219
+run_uuid: 092d2412a2f148e1a5c8627521455f2c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741470233438
+status: 3
+tags: []
+user_id: RICH-1

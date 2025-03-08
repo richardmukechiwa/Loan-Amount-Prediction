@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/9711c4cf5252428a877fe7bb1245f5b9/artifacts
+end_time: 1741468421890
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9711c4cf5252428a877fe7bb1245f5b9
+run_name: capable-kit-4
+run_uuid: 9711c4cf5252428a877fe7bb1245f5b9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741468421856
+status: 3
+tags: []
+user_id: RICH-1
