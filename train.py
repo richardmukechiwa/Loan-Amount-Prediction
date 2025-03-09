@@ -1,22 +1,13 @@
-import dagshub
+# ML flow Tracking
 import mlflow
-import os
+import dagshub
 
-# Set up connection to DagsHub MLflow
+# Initialize DagsHub MLflow tracking
 dagshub.init(repo_owner="richardmukechiwa", repo_name="Loan-Amount-Prediction", mlflow=True)
 
-# Set MLflow tracking URI
-mlflow.set_tracking_uri("https://dagshub.com/richardmukechiwa/Loan-Amount-Prediction.mlflow")
-
-# Authenticate using environment variables
-os.environ["MLFLOW_TRACKING_USERNAME"] = "richardmukechiwa"
-os.environ["MLFLOW_TRACKING_PASSWORD"] = "eb0d37817b53655929466e335a4b93d0a38eb874"
-
-
-import dagshub
-dagshub.init(repo_owner='richardmukechiwa', repo_name='Loan-Amount-Prediction', mlflow=True)
-
-import mlflow
 with mlflow.start_run():
-  #mlflow.log_param('', 'value')
-  mlflow.log_metric('r2', 0.75)
+    mlflow.log_param("batch_size", 32)
+    mlflow.log_metric("loss", 0.23)
+    
+# To run the experiment, use the following command in the terminal:
+# python run_experiment.py

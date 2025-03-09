@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/c944ab99f9914429879375b00255996b/artifacts
+end_time: 1741547544793
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c944ab99f9914429879375b00255996b
+run_name: sneaky-goat-62
+run_uuid: c944ab99f9914429879375b00255996b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741547544742
+status: 3
+tags: []
+user_id: RICH-1

@@ -30,8 +30,8 @@ class ModelTrainerConfig:
     train_data_path: Path
     test_data_path: Path
     model_name: str
-    fit_intercept: bool
-    n_jobs: int
+    alpha: float
+    l1_ratio:float
     target_column: float
     
 @dataclass(frozen=True)
