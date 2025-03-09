@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/1fd5502cb9f44c96aa6844c2cf9baf3a/artifacts
+end_time: 1741554844092
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1fd5502cb9f44c96aa6844c2cf9baf3a
+run_name: dapper-squid-261
+run_uuid: 1fd5502cb9f44c96aa6844c2cf9baf3a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741554844062
+status: 3
+tags: []
+user_id: RICH-1

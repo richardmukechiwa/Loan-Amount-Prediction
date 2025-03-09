@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/c9f9deb23e79464b84065585a450b4d6/artifacts
+end_time: 1741553355854
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c9f9deb23e79464b84065585a450b4d6
+run_name: valuable-mouse-994
+run_uuid: c9f9deb23e79464b84065585a450b4d6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741553355807
+status: 3
+tags: []
+user_id: RICH-1
