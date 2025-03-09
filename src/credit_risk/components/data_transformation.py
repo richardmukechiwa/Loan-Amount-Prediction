@@ -3,14 +3,14 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import seaborn as sns 
-from credit_risk.entity.config_entity import DataTransformationConfig    
-
    #transform categorical data and stardardize the data
 from sklearn.preprocessing import StandardScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline   
 from sklearn.preprocessing import OneHotEncoder
 from credit_risk import logger
+from credit_risk.entity.config_entity import DataTransformationConfig    
+
 
 
 class DataTransformation:

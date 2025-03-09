@@ -1,6 +1,6 @@
 import os
 from credit_risk import logger
-from sklearn.linear_model import LinearRegression 
+from sklearn.linear_model import ElasticNet 
 import joblib
 import pandas as pd
 from credit_risk.entity.config_entity import ModelTrainerConfig
@@ -26,7 +26,7 @@ class ModelTrainer:
         train_y=train_data[[self.config.target_column]]
         test_y=test_data[[self.config.target_column]]
         
-        reg = LinearRegression(fit_intercept=self.config.fit_intercept, n_jobs=self.config.n_jobs)
-        reg.fit(train_x, train_y)
+        elnet   = ElasticNet(alpha=self.config.alpha, l1_ratio=self.config.l1_ratio, random_state=42)
+        elnet.fit(train_x, train_y)
     
-        joblib.dump(reg, os.path.join(self.config.root_dir, self.config.model_name))
+        joblib.dump(elnet,os.path.join(self.config.root_dir, self.config.model_name))
