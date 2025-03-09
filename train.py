@@ -1,4 +1,4 @@
-# ML flow Tracking
+# Mlflow tracking URI
 import mlflow
 import dagshub
 
@@ -6,8 +6,10 @@ import dagshub
 dagshub.init(repo_owner="richardmukechiwa", repo_name="Loan-Amount-Prediction", mlflow=True)
 
 with mlflow.start_run():
-    mlflow.log_param("batch_size", 32)
-    mlflow.log_metric("loss", 0.23)
-    
-# To run the experiment, use the following command in the terminal:
-# python run_experiment.py
+    mlflow.log_param("alpha", 0.8)
+    mlflow.log_param("l1_ratio", 0.8)
+    mlflow.log_metric("rmse", 0.92)
+
+#To run the mlflow experiment
+# run the following command in your terminal
+# python train.py

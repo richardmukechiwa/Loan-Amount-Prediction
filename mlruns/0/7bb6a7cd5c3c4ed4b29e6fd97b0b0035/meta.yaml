@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/7bb6a7cd5c3c4ed4b29e6fd97b0b0035/artifacts
+end_time: 1741553780527
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7bb6a7cd5c3c4ed4b29e6fd97b0b0035
+run_name: agreeable-hare-533
+run_uuid: 7bb6a7cd5c3c4ed4b29e6fd97b0b0035
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741553780490
+status: 3
+tags: []
+user_id: RICH-1
