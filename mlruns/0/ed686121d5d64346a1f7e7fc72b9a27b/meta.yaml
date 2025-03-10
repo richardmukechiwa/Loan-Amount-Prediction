@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/ed686121d5d64346a1f7e7fc72b9a27b/artifacts
+end_time: 1741635291284
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ed686121d5d64346a1f7e7fc72b9a27b
+run_name: sincere-pig-30
+run_uuid: ed686121d5d64346a1f7e7fc72b9a27b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741635291239
+status: 3
+tags: []
+user_id: RICH-1
