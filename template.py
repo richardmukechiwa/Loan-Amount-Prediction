@@ -24,6 +24,7 @@ list_of_files = [
     "main.py",
     "app.py",
     "train.py",
+    "static",
     "Dockerfile",
     "requirements.txt",
     "setup.py",

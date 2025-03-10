@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/4daed27d753d45d89247347ac744a377/artifacts
+end_time: 1741635739287
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4daed27d753d45d89247347ac744a377
+run_name: resilient-mare-270
+run_uuid: 4daed27d753d45d89247347ac744a377
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741635739251
+status: 3
+tags: []
+user_id: RICH-1
