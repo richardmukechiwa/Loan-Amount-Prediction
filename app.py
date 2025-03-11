@@ -49,7 +49,7 @@ def index():
             prediction = model.predict(input_data)[0]
         except Exception as e:
             prediction = f"Error: {str(e)}"
-            data = [Age, Income, Home, Emp_length, Intent, Rate, Percent_income, Cred_length]
+            data = ["Age", "Income", "Home", "Emp_length", "Intent", "Rate", "Percent_income"]
             data =np.array(data).reshape(1, 8)
             
             obj   = PredictionPipeline()
