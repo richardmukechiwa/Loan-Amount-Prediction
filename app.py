@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import os
 import numpy as np
 import pandas as pd 
+from sklearn.preprocessing import OneHotEncoder
 from credit_risk.pipeline.prediction import PredictionPipeline
 
 app = Flask(__name__) #initialising a flask app
@@ -23,11 +24,13 @@ def index():
         try:
             # Get input values from form
             features = [
-                float(request.form['Age']),
+                float(request.form['Cred_length']),
                 float(request.form['Income']),
-                float(request.form['Emp_length']),
+                int(request.form['Emp_length']),
                 float(request.form['Rate']),
                 float(request.form['Percent_income']),
+                
+                
                 
                 # Home choices (one-hot encoded)
                 1.0 if request.form['Home'] == 'MORTGAGE' else 0.0,
@@ -46,11 +49,11 @@ def index():
             
             # Convert input into a NumPy array and reshape for prediction
             input_data = np.array(features).reshape(1, -1)
-            prediction = model.predict(input_data)[0]
+            prediction = elnet.predict(input_data)[0]
         except Exception as e:
             prediction = f"Error: {str(e)}"
-            data = ["Age", "Income", "Home", "Emp_length", "Intent", "Rate", "Percent_income"]
-            data =np.array(data).reshape(1, 8)
+            data = ["Cred_length", "Income", "Home", "Emp_length", "Intent", "Rate", "Percent_income"]
+            data =np.array(data).reshape(1, 7)
             
             obj   = PredictionPipeline()
             predict = obj.predict(data)
