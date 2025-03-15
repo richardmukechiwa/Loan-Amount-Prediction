@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/140a605ca0024bf1864027f8b830429f/artifacts
+end_time: 1742053197917
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 140a605ca0024bf1864027f8b830429f
+run_name: resilient-panda-927
+run_uuid: 140a605ca0024bf1864027f8b830429f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742053197702
+status: 4
+tags: []
+user_id: RICH-1
