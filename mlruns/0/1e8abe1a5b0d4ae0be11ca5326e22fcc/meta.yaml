@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/1e8abe1a5b0d4ae0be11ca5326e22fcc/artifacts
+end_time: 1742075870671
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1e8abe1a5b0d4ae0be11ca5326e22fcc
+run_name: caring-roo-730
+run_uuid: 1e8abe1a5b0d4ae0be11ca5326e22fcc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742075870445
+status: 3
+tags: []
+user_id: RICH-1

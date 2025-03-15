@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/fd7536fa8a6848709a4b6da712ae08b7/artifacts
+end_time: 1742069610945
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fd7536fa8a6848709a4b6da712ae08b7
+run_name: peaceful-sponge-153
+run_uuid: fd7536fa8a6848709a4b6da712ae08b7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742069610855
+status: 4
+tags: []
+user_id: RICH-1

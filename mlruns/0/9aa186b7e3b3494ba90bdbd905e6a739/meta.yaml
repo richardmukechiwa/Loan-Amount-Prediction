@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/9aa186b7e3b3494ba90bdbd905e6a739/artifacts
+end_time: 1742070402896
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9aa186b7e3b3494ba90bdbd905e6a739
+run_name: illustrious-gnat-323
+run_uuid: 9aa186b7e3b3494ba90bdbd905e6a739
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742070402793
+status: 4
+tags: []
+user_id: RICH-1
