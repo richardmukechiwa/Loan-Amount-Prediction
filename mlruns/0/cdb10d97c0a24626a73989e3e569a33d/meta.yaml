@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/cdb10d97c0a24626a73989e3e569a33d/artifacts
+end_time: 1742070513279
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cdb10d97c0a24626a73989e3e569a33d
+run_name: omniscient-bass-547
+run_uuid: cdb10d97c0a24626a73989e3e569a33d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742070513202
+status: 4
+tags: []
+user_id: RICH-1
