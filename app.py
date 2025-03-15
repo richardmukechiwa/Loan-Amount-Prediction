@@ -44,7 +44,7 @@ def index():
             Intent = [1.0 if intent_selected == i else 0.0 for i in intent_options]
                 
             data = [Income, Emp_length, Rate, Percent_income, Cred_length] + Home + Intent
-            data = np.array(data).reshape(1, 15)  # Reshape to a single sample with all features
+            data = np.array(data).reshape(1, 7)  # Reshape to a single sample with all features
             
             # Debug print statement to check the shape and content of the data
             print('Input data array shape:', data.shape)
