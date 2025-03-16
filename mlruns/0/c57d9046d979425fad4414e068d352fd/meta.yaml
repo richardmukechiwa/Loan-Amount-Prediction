@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/c57d9046d979425fad4414e068d352fd/artifacts
+end_time: 1742152290321
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c57d9046d979425fad4414e068d352fd
+run_name: overjoyed-skink-83
+run_uuid: c57d9046d979425fad4414e068d352fd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742152290101
+status: 3
+tags: []
+user_id: RICH-1

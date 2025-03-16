@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/a28f242db5bf4a949fa30ec42ee0ce1e/artifacts
+end_time: 1742158431750
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a28f242db5bf4a949fa30ec42ee0ce1e
+run_name: debonair-fish-161
+run_uuid: a28f242db5bf4a949fa30ec42ee0ce1e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742158431481
+status: 3
+tags: []
+user_id: RICH-1
