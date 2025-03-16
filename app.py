@@ -1,11 +1,8 @@
-from flask import Flask, render_template, request
 import os
+from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline   
-from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import OneHotEncoder
 from credit_risk.pipeline.prediction import PredictionPipeline
 
@@ -43,8 +40,8 @@ def index():
             intent_selected = request.form.get('Intent', 'PERSONAL')  # Default to 'PERSONAL' if not provided
             Intent = [1.0 if intent_selected == i else 0.0 for i in intent_options]
                 
-            data = [Income, Emp_length, Rate, Percent_income, Cred_length] + Home + Intent
-            data = np.array(data).reshape(1, 7)  # Reshape to a single sample with all features
+            data = [Income, Emp_length, Rate, Percent_income, Cred_length] + home_options +intent_options
+            data = np.array(data).reshape(1, 15) #shape to a single sample with all features
             
             # Debug print statement to check the shape and content of the data
             print('Input data array shape:', data.shape)
