@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/1076d2bfd24b42e4b271adc244bcde74/artifacts
+end_time: 1742230434487
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1076d2bfd24b42e4b271adc244bcde74
+run_name: welcoming-shad-406
+run_uuid: 1076d2bfd24b42e4b271adc244bcde74
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742230433935
+status: 3
+tags: []
+user_id: RICH-1

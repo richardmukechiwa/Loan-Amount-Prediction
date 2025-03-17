@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import seaborn as sns 
+import joblib
    #transform categorical data and stardardize the data
 from sklearn.preprocessing import StandardScaler
 from sklearn.compose import ColumnTransformer
@@ -122,42 +123,48 @@ class DataTransformation:
         data2 = pd.read_csv(self.config.data_path)
         
         #feature engineering
-        cat_features    = data2[["Home", "Intent"]]
-        num_features   = data2[["Age",	"Income", "Emp_length", "Amount","Rate", 	"Percent_income"]]
+        cat_features    = ["Home", "Intent"]
+        num_features   = ["Age",	"Income", "Emp_length", "Amount","Rate", 	"Percent_income"]
         
         #instantiate SimpleImputer
        
         
         # instantiate the column StandardScaler
-        numerical_processor = Pipeline(
-            steps =[("standard scaling",  StandardScaler()
-            )]  
-        )
+        #numerical_processor = Pipeline(
+            #steps =[("standard scaling",  StandardScaler()
+            #)]  
+        #)
         
         # instantiate the column OneHotEncoder
-        categorical_processor = Pipeline(
-            steps =[("one hot encoding", OneHotEncoder(handle_unknown='ignore', sparse_output=False)
-            )]  
-        )
+        #categorical_processor = Pipeline(
+            #steps =[("one hot encoding", OneHotEncoder(handle_unknown='ignore', sparse_output=False)
+            #)]  
+        #)
     
         #implement the column transformer
         preprocessor = ColumnTransformer(
             transformers=[
                 
-                ("numerical", numerical_processor, num_features.columns),
-                ("categorical", categorical_processor, cat_features.columns)
+                ("cat", OneHotEncoder(handle_unknown="ignore", sparse_output= False), cat_features),
+                ("num", StandardScaler(), num_features)
             ]
         )   
- 
-        #fit the preprocessor
-        preprocessor.fit(data2)
         
+        
+        pipeline= Pipeline(steps=[(preprocessor, "preprocessor")])
+ 
+        #fit the pipeline
+        pipeline.fit(data2)
+        
+        #save the pipeline
+        joblib.dump(pipeline, self.config.model_path)
         
         #transform the data
-        transformed_data=preprocessor.transform(data2)  
+        transformed_data = pipeline.transform(data2)
+        
 
         data2=pd.DataFrame(transformed_data)
-        data2.columns = num_features.columns.tolist() + preprocessor.named_transformers_["categorical"]["one hot encoding"].get_feature_names_out().tolist()
+        data2.columns = num_features + preprocessor.named_transformers_["cat"].get_feature_names_out().tolist()
         data2.to_csv("artifacts/data_ingestion/credit_risk.csv", index=False)     
         
       
