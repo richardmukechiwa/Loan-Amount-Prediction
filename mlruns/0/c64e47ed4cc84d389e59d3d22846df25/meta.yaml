@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/c64e47ed4cc84d389e59d3d22846df25/artifacts
+end_time: 1742239087615
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c64e47ed4cc84d389e59d3d22846df25
+run_name: gifted-gnu-861
+run_uuid: c64e47ed4cc84d389e59d3d22846df25
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742239087318
+status: 3
+tags: []
+user_id: RICH-1

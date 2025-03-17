@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/fed69dfa5695441984cbc22b83788b88/artifacts
+end_time: 1742235974162
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fed69dfa5695441984cbc22b83788b88
+run_name: abrasive-midge-366
+run_uuid: fed69dfa5695441984cbc22b83788b88
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742235973520
+status: 3
+tags: []
+user_id: RICH-1

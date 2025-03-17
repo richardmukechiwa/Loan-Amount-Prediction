@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/e3bc8d42c5dd428d90bc44aecc5a8d49/artifacts
+end_time: 1742240455969
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e3bc8d42c5dd428d90bc44aecc5a8d49
+run_name: aged-foal-928
+run_uuid: e3bc8d42c5dd428d90bc44aecc5a8d49
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742240455757
+status: 3
+tags: []
+user_id: RICH-1
