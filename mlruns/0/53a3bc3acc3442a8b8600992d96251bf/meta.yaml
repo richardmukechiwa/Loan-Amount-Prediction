@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/53a3bc3acc3442a8b8600992d96251bf/artifacts
+end_time: 1742494325490
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 53a3bc3acc3442a8b8600992d96251bf
+run_name: amazing-fish-567
+run_uuid: 53a3bc3acc3442a8b8600992d96251bf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742494324903
+status: 3
+tags: []
+user_id: RICH-1
