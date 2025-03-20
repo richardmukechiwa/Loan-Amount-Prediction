@@ -5,30 +5,15 @@ import numpy as np
 
 class PredictionPipeline:
     def __init__(self):
-        self.ohe = joblib.load(Path("artifacts/model_trainer/onehotencoder.joblib"))
-         
-        self.scaler = joblib.load(Path("artifacts/model_trainer/preprocessor.joblib"))
+        self.pipeline = joblib.load(Path("artifacts/model_trainer/pipeline.joblib"))
         self.model = joblib.load(Path("artifacts/model_trainer/model.joblib"))  # Load trained model
-        
-    def predict(self, raw_data):
-        # Apply the saved ohe and scaler on the raw data
-        data = self.ohe.transform(raw_data)
-    
-        data = self.scaler.transform(data)
-    
-        #make prediction using the loaded model and return unscaled predictions
-        predictions = self.model.predict(data)
-    
-        #return unscaled predictions
-        return predictions
-        
-        
-        
-        
-        
-        
-        
-        # Predict on transformed data
-        scaled_prediction = self.model.predict(transformed_data)
-        return scaled_prediction
 
+    def predict(self, raw_data):
+        # Apply the saved pipeline (which includes the encoder and scaler) on the raw data
+        data = self.pipeline.transform(raw_data)
+
+        # Make prediction using the loaded model and return predictions
+        predictions = self.model.predict(data)
+
+        # Return predictions
+        return predictions
