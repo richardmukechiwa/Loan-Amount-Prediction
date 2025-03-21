@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/916aa6d0e7394a95a93dd33167061dc9/artifacts
+end_time: 1742586858687
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 916aa6d0e7394a95a93dd33167061dc9
+run_name: charming-horse-637
+run_uuid: 916aa6d0e7394a95a93dd33167061dc9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742586858623
+status: 3
+tags: []
+user_id: RICH-1

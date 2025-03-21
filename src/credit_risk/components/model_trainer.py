@@ -1,5 +1,4 @@
 import os
-from credit_risk import logger
 from sklearn.ensemble import RandomForestRegressor 
 import joblib
 import pandas as pd
@@ -25,6 +24,9 @@ class ModelTrainer:
         test_x = test_data.drop(self.config.target_column, axis=1)
         train_y=train_data[[self.config.target_column]]
         test_y=test_data[[self.config.target_column]]
+        
+        train_y = train_y.squeeze()
+        test_y = test_y.squeeze()
         
         rfreg   = RandomForestRegressor(n_estimators=self.config.n_estimators, max_depth=self.config.max_depth, min_samples_leaf=self.config.min_samples_leaf, min_samples_split=self.config.min_samples_split ,random_state=42)
         rfreg.fit(train_x, train_y)

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/4d416ada3ef84e6581445a38683fa132/artifacts
+end_time: 1742586373698
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4d416ada3ef84e6581445a38683fa132
+run_name: chill-boar-647
+run_uuid: 4d416ada3ef84e6581445a38683fa132
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742586373626
+status: 3
+tags: []
+user_id: RICH-1

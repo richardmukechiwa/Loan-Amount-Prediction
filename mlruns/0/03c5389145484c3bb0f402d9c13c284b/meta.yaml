@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/03c5389145484c3bb0f402d9c13c284b/artifacts
+end_time: 1742580512290
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 03c5389145484c3bb0f402d9c13c284b
+run_name: fortunate-dog-301
+run_uuid: 03c5389145484c3bb0f402d9c13c284b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742580512211
+status: 3
+tags: []
+user_id: RICH-1

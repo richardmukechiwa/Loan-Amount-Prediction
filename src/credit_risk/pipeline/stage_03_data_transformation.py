@@ -18,11 +18,11 @@ class DataTransformationTrainingPipeline:
                 config = ConfigurationManager()
                 data_transformation_config = config.get_data_transformation_config() 
                 data_transformation = DataTransformation(config = data_transformation_config)
-                data_transformation.data_cleaning()
-                data_transformation.exploratory_data_analysis()
-                data_transformation.feat_engineering()
-                data_transformation.train_test_splitting()
-                
+                # Perform data transformation steps
+                cleaned_data = data_transformation.data_cleaning()
+                analyzed_data = data_transformation.exploratory_data_analysis(cleaned_data)
+                #transformed_data = data_transformation.feat_engineering(cleaned_data)
+                train_data, test_data = data_transformation.train_test_splitting(analyzed_data)
             else:
                 raise Exception("Your data schema is not valid")
         except Exception as e:
