@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/489340f076c6472197ecc9bd3312dff8/artifacts
+end_time: 1742579615376
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 489340f076c6472197ecc9bd3312dff8
+run_name: handsome-trout-476
+run_uuid: 489340f076c6472197ecc9bd3312dff8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742579615356
+status: 4
+tags: []
+user_id: RICH-1

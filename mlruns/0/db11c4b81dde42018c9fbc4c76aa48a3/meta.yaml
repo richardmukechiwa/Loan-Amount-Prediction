@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/db11c4b81dde42018c9fbc4c76aa48a3/artifacts
+end_time: 1742580172325
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: db11c4b81dde42018c9fbc4c76aa48a3
+run_name: vaunted-gnat-738
+run_uuid: db11c4b81dde42018c9fbc4c76aa48a3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742580172241
+status: 3
+tags: []
+user_id: RICH-1

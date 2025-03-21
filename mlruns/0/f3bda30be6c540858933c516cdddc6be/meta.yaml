@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/f3bda30be6c540858933c516cdddc6be/artifacts
+end_time: 1742583799189
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f3bda30be6c540858933c516cdddc6be
+run_name: handsome-bat-901
+run_uuid: f3bda30be6c540858933c516cdddc6be
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742583798949
+status: 3
+tags: []
+user_id: RICH-1

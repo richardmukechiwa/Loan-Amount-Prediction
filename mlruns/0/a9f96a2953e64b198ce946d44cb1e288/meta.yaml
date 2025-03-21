@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/a9f96a2953e64b198ce946d44cb1e288/artifacts
+end_time: 1742579173880
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a9f96a2953e64b198ce946d44cb1e288
+run_name: puzzled-smelt-588
+run_uuid: a9f96a2953e64b198ce946d44cb1e288
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742579173817
+status: 3
+tags: []
+user_id: RICH-1

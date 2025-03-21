@@ -21,7 +21,7 @@ class DataValidationConfig:
 class DataTransformationConfig:
     root_dir: Path
     data_path: Path
-    
+    pipeline_name:str
 
     
 @dataclass(frozen=True)

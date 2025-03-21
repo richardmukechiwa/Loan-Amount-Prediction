@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/da9d173adb6b40af869e083dc9266288/artifacts
+end_time: 1742588043972
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: da9d173adb6b40af869e083dc9266288
+run_name: amusing-fox-779
+run_uuid: da9d173adb6b40af869e083dc9266288
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742588043712
+status: 3
+tags: []
+user_id: RICH-1

@@ -1,11 +1,12 @@
 from pathlib import Path
 import joblib
-import numpy as np
+
 
 
 class PredictionPipeline:
     def __init__(self):
-        self.pipeline = joblib.load(Path("artifacts/model_trainer/pipeline.joblib"))
+    
+        self.pipeline = joblib.load(Path("artifacts/data_transformation/credit_risk_pipeline.joblib"))
         self.model = joblib.load(Path("artifacts/model_trainer/model.joblib"))  # Load trained model
 
     def predict(self, raw_data):
