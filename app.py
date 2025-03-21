@@ -34,7 +34,7 @@ def index():
             Intent = [1.0 if intent_selected == i else 0.0 for i in intent_options]
             
             data = [Income, Emp_length, Rate, Percent_income, Cred_length] + Home + Intent
-            data = np.array(data).reshape(1, 15)
+            data = np.array(data).reshape(1, -1)
             
             print('Input data array shape:', data.shape)
             print('Input data array content:', data)

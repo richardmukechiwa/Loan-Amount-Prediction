@@ -1,20 +1,21 @@
 from pathlib import Path
 import joblib
-
-
+import pandas as pd
 
 class PredictionPipeline:
     def __init__(self):
-    
-        self.pipeline = joblib.load(Path("artifacts/data_transformation/credit_risk_pipeline.joblib"))
-        self.model = joblib.load(Path("artifacts/model_trainer/model.joblib"))  # Load trained model
+        # Load the trained pipeline (preprocessor + model)
+        self.model = joblib.load(Path("artifacts/model_trainer/model.joblib"))  
 
     def predict(self, raw_data):
-        # Apply the saved pipeline (which includes the encoder and scaler) on the raw data
-        data = self.pipeline.transform(raw_data)
+        """
+        Takes raw data as a Pandas DataFrame, applies the saved pipeline, and makes predictions.
+        """
+        if not isinstance(raw_data, pd.DataFrame):
+            raise ValueError("Input data must be a Pandas DataFrame.")
+        
+        # The pipeline (preprocessor + model) is already fitted, so we just use `.predict()`
+        predictions = self.model.predict(raw_data)
 
-        # Make prediction using the loaded model and return predictions
-        predictions = self.model.predict(data)
-
-        # Return predictions
         return predictions
+
