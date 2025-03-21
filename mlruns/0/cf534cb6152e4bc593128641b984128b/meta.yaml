@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/cf534cb6152e4bc593128641b984128b/artifacts
+end_time: 1742596595463
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cf534cb6152e4bc593128641b984128b
+run_name: melodic-wren-546
+run_uuid: cf534cb6152e4bc593128641b984128b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742596595259
+status: 3
+tags: []
+user_id: RICH-1

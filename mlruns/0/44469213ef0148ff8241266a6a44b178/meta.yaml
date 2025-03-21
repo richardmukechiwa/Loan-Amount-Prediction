@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/44469213ef0148ff8241266a6a44b178/artifacts
+end_time: 1742596543303
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 44469213ef0148ff8241266a6a44b178
+run_name: upbeat-bee-670
+run_uuid: 44469213ef0148ff8241266a6a44b178
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742596543054
+status: 3
+tags: []
+user_id: RICH-1
