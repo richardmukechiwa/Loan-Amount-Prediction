@@ -17,7 +17,7 @@
     <!-- Additional custom CSS -->
     <style>
         body, label, h1, h2, span, .form-row input, .form-row select, .register {
-            color: Light Blue;
+            color:  Sky Blue;
         }
         .form-v9-content {
             background-image: url('static/assets/img/grey.jpg');
@@ -27,35 +27,35 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 15px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             color: teal;
         }
         .form-row {
             display: flex;
             flex-direction: column;
-            margin-bottom: 15px;
+            margin-bottom: 1px;
         }
         .form-row input, .form-row select {
-            padding: 20px;
-            border-radius: 4px;
+            padding: 10px;
+            border-radius: 10px;
             border: 1px solid #ccc;
             width: 80%;
         }
         .form-row label {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
         .form-row-last {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 10px;
         }
         .register {
             background-color: #ff6b6b;
             color: teal;
-            padding: 10px 20px;
+            padding: 10px 30px;
             border: none;
-            border-radius: 4px;
+            border-radius: 10px;
             cursor: pointer;
         }
         .register:hover {
@@ -101,28 +101,28 @@
                 <form class="form-detail" action="/predict" method="post">
                     <h2>Please Fill In The Applicant's Information</h2>
                     <div class="form-row">
-                        <label for="Cred_length">Cred_length:</label>
-                        <input type="float" name="Cred_length" id="Cred_length" class="float" placeholder="Enter" required>
+                        <label for="Cred_length">Credit length:</label>
+                        <input type="float" name="Cred_length" id="Cred_length" class="float" placeholder="Enter here" required>
                     </div>
 
                     <div class="form-row">
                         <label for="Income">Income:</label>
-                        <input type="float" name="Income" id="Income" class="input-float" placeholder="Enter" required>
+                        <input type="float" name="Income" id="Income" class="input-float" placeholder="Enter here" required>
                     </div>
 
                     <div class="form-row">
                         <label for="Emp_length">Employment length:</label>
-                        <input type="int" name="Emp_length" id="Emp_length" class="input-int" placeholder="Enter" required>
+                        <input type="int" name="Emp_length" id="Emp_length" class="input-int" placeholder="Enter here" required>
                     </div>
 
                     <div class="form-row">
                         <label for="Percent_income">Percent Income:</label>
-                        <input type="float" name="Percent_income" id="Percent_income" class="input-float" placeholder="Enter" required>
+                        <input type="float" name="Percent_income" id="Percent_income" class="input-float" placeholder="Enter here" required>
                     </div>
 
                     <div class="form-row">
                         <label for="Rate">Repayment Rate:</label>
-                        <input type="float" name="Rate" id="Rate" class="input-float" placeholder="Enter" required>
+                        <input type="float" name="Rate" id="Rate" class="input-float" placeholder="Enter here" required>
                     </div>
 
                     <div class="form-row">

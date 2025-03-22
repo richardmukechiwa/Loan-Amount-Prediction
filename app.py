@@ -1,6 +1,6 @@
+import os
 from flask import Flask, render_template, request
 import pandas as pd
-import os
 from credit_risk.pipeline.prediction import PredictionPipeline
 
 app = Flask(__name__)
