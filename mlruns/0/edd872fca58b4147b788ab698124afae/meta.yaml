@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/edd872fca58b4147b788ab698124afae/artifacts
+end_time: 1742682522021
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: edd872fca58b4147b788ab698124afae
+run_name: bemused-dolphin-686
+run_uuid: edd872fca58b4147b788ab698124afae
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742682521804
+status: 3
+tags: []
+user_id: RICH-1

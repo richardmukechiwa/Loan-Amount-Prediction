@@ -34,7 +34,7 @@ class DataTransformation:
         logger.info("Null values dropped")
         
         # Remove outliers
-        data = data[(data['Age'] < 80) & (data['Emp_length'] < 10) & (data['Income'] < 948000)]
+        data = data[(data['Age'] < 60) & (data['Emp_length'] < 10) & (data['Income'] < 200000)]
         
         logger.info("Data cleaning complete")
         
