@@ -55,8 +55,8 @@ class ConfigurationManager:
         
         data_transformation_config = DataTransformationConfig(
             root_dir  = config.root_dir,
-            data_path = config.data_path,
-            pipeline_name = config.pipeline_name
+            data_path = config.data_path
+            
         )
         
         return data_transformation_config

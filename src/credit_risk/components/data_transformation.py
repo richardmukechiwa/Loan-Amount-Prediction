@@ -1,22 +1,18 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.model_selection import train_test_split
-import joblib
 import os
 import logging
 
 logger = logging.getLogger(__name__)
 
 class DataTransformationConfig:
-    def __init__(self, data_path, root_dir, pipeline_name):
+    def __init__(self, data_path, root_dir):
         self.data_path = data_path
         #self.model_path = model_path
         self.root_dir = root_dir
-        self.pipeline_name = pipeline_name
+        
 
 class DataTransformation:
     def __init__(self, config: DataTransformationConfig):
@@ -34,7 +30,7 @@ class DataTransformation:
         logger.info("Null values dropped")
         
         # Remove outliers
-        data = data[(data['Age'] < 60) & (data['Emp_length'] < 10) & (data['Income'] < 200000)]
+        data = data[(data['Age'] < 60) & (data['Emp_length'] <= 10) & (data['Income'] < 200000)]
         
         logger.info("Data cleaning complete")
         
@@ -89,47 +85,8 @@ class DataTransformation:
         
         return data
     
-    #def feat_engineering(self, data):
-        
-        # Define categorical and numerical features
-        #cat_features = ["Home", "Intent"]
-        #num_features = ["Income", "Emp_length", "Amount", "Rate", "Percent_income"]
-        
-        # Implement the column transformer
-        #preprocessor = ColumnTransformer(
-            #transformers=[
-                 #("num", StandardScaler(), num_features),
-                #("cat", OneHotEncoder(handle_unknown="ignore", sparse_output=False), cat_features)
-            
-            #]
-        #)   
-        
-        #pipeline = Pipeline(steps=[("preprocessor", preprocessor)])
- 
-        # Fit the pipeline
-        #pipeline.fit(data)
-        
-        #joblib.dump(rfreg,os.path.join(self.config.root_dir, self.config.model_name))
-        
-        # Save the pipeline
-        #joblib.dump(pipeline, os.path.join(self.config.root_dir, self.config.pipeline_name))
-        
-        # Transform the data
-        #transformed_data = pipeline.transform(data)
-        
-        # Create DataFrame from the transformed data
-        #transformed_df = pd.DataFrame(transformed_data, columns=num_features + preprocessor.named_transformers_["cat"].get_feature_names_out().tolist())
-        #transformed_csv_path = os.path.join(self.config.root_dir, "credit_risk.csv")
-        #transformed_df.to_csv(transformed_csv_path, index=False)    
-        
-        #print(transformed_df.isna().sum())
-        
-    
-         
-        #return transformed_df
-    
     def train_test_splitting(self, data):
-        #data = pd.read_csv(transformed_csv_path)
+        
         
         # Split the data into train and test
         train, test = train_test_split(data, test_size=0.2, random_state=42)  
