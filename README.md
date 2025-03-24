@@ -61,29 +61,18 @@ open up your local host and port
 [dagshub](https://dagshub.com/)
 
 https://dagshub.com/richardmukechiwa/Loan-Amount-Prediction.mlflow
+# Mlflow tracking URI
 
-import dagshub
-dagshub.init(repo_owner='richardmukechiwa', repo_name='Loan-Amount-Prediction', mlflow=True)
 
-import mlflow
+# Initialize DagsHub MLflow tracking
+dagshub.init(repo_owner="richardmukechiwa", repo_name="Loan-Amount-Prediction", mlflow=True)
+
 with mlflow.start_run():
-  mlflow.log_param('parameter name', 'value')
-  mlflow.log_metric('metric name', 1)
-
-Run this to export as env variables:
-
-```python
-
-import dagshub
-import mlflow
-
-# Initialize DagsHub MLflow tracking (automatically sets tracking URI)
-dagshub.init(repo_owner='richardmukechiwa', repo_name='Loan-Amount-Prediction', mlflow=True)
-
-# Start an MLflow experiment
-with mlflow.start_run():
-    mlflow.log_param('model_type', 'Linear Regression')
-    mlflow.log_metric('rmse', 0.25)  # Example metric
+    mlflow.log_param("n_estimators", 300)
+    mlflow.log_param("max_depth", 30)
+    mlflow.log_param("min_samples_split", 2)
+    mlflow.log_param("min_samples_leaf", 1)
+    mlflow.log_metric("r2", 0.9973757800995268)
 
 print("MLflow tracking initialized successfully!")
 ```
