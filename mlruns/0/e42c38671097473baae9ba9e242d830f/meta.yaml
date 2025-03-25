@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/e42c38671097473baae9ba9e242d830f/artifacts
+end_time: 1742922310812
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e42c38671097473baae9ba9e242d830f
+run_name: merciful-penguin-113
+run_uuid: e42c38671097473baae9ba9e242d830f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742922310491
+status: 3
+tags: []
+user_id: RICH-1

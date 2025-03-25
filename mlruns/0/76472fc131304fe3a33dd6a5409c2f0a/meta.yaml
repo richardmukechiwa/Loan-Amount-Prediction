@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/76472fc131304fe3a33dd6a5409c2f0a/artifacts
+end_time: 1742923495356
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 76472fc131304fe3a33dd6a5409c2f0a
+run_name: amazing-shrew-417
+run_uuid: 76472fc131304fe3a33dd6a5409c2f0a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742923495060
+status: 3
+tags: []
+user_id: RICH-1

@@ -83,6 +83,13 @@ class DataTransformation:
         plt.title('Correlation Matrix')
         plt.show()
         
+        #drop 'Age'
+        data.drop('Age', axis=1, inplace=True)
+        
+         # dropping columns after feature selection, #columns to be dropped: Home, Rate, Percent_income, Cred_length
+        #data.drop(['Home', 'Rate', 'Percent_income', 'Cred_length'], axis=1, inplace=True)
+        
+        
         return data
     
     def train_test_splitting(self, data):

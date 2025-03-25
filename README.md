@@ -45,24 +45,22 @@ python app.py
 
 Then,
 ```python
+# Run the following command to start the application    
+
 open up your local host and port
+
 ```
-
-### MLflow
-
-[Documentation](https://mlflow.org/docs/latest/index.html)
-
-##### cmd
-- mlflow ui
-
 
 ### dagshub
 
 [dagshub](https://dagshub.com/)
 
 https://dagshub.com/richardmukechiwa/Loan-Amount-Prediction.mlflow
-# Mlflow tracking URI
 
+### Initialize DagsHub MLflow tracking
+
+import mlflow
+import dagshub
 
 # Initialize DagsHub MLflow tracking
 dagshub.init(repo_owner="richardmukechiwa", repo_name="Loan-Amount-Prediction", mlflow=True)
@@ -74,6 +72,22 @@ with mlflow.start_run():
     mlflow.log_param("min_samples_leaf", 1)
     mlflow.log_metric("r2", 0.9973757800995268)
 
-print("MLflow tracking initialized successfully!")
+#To run the mlflow experiment
+#run the following command in your terminal
+#python train.py
 ```
+### Creating docker image
+
+# Dockerfile
+
+FROM python:3.8
+
+WORKDIR /app
+COPY . /app
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "app.py"]
+
+
 
