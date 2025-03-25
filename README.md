@@ -58,7 +58,7 @@ open up your local host and port
 https://dagshub.com/richardmukechiwa/Loan-Amount-Prediction.mlflow
 
 ### Initialize DagsHub MLflow tracking
-
+```python
 import mlflow
 import dagshub
 
@@ -76,6 +76,7 @@ with mlflow.start_run():
 #run the following command in your terminal
 #python train.py
 ```
+```python
 ### Creating docker image
 
 # Dockerfile
@@ -88,6 +89,6 @@ COPY . /app
 RUN pip install -r requirements.txt
 
 CMD ["python", "app.py"]
-
+```
 
 
