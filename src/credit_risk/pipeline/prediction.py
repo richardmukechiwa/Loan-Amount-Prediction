@@ -8,7 +8,7 @@ class PredictionPipeline:
     def __init__(self):
         # Define model path
         self.model_path = Path("artifacts/model_trainer/model.joblib")
-        self.file_id = "1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL"  # Your Google Drive file ID
+        self.file_id = "1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL"  # Google Drive file ID
 
         # Ensure the model is available
         self.download_model_if_needed()

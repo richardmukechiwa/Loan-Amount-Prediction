@@ -177,3 +177,4 @@ artifacts/*
 # But allow tracking of the trained model
 !artifacts/model_trainer/
 !artifacts/model_trainer/model.joblib
+artifacts/model_trainer/model.joblib
