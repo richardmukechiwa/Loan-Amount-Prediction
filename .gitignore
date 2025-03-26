@@ -175,3 +175,4 @@ cython_debug/
 artifacts/*
 
 
+artifacts/model_trainer/model.joblib 
