@@ -5,6 +5,9 @@ from sklearn.ensemble import RandomForestRegressor
 import pandas as pd
 import joblib
 import os
+from sklearn.model_selection import GridSearchCV
+from joblib import parallel_backend
+
 
 class ModelTrainer:
     def __init__(self, config):
@@ -53,4 +56,32 @@ class ModelTrainer:
         model_pipeline.fit(train_x, train_y)
 
         # Save the pipeline
-        joblib.dump(model_pipeline, os.path.join(self.config.root_dir, self.config.model_name))
+        #joblib.dump(model_pipeline, os.path.join(self.config.root_dir, self.config.model_name))
+        
+         #model evaluation with GridSearchCV
+        param_grid = {
+            'model__n_estimators': [100, 200, 300],
+            'model__max_depth': [10, 20, 30],
+            'model__min_samples_split': [2, 5, 10],
+         'model__min_samples_leaf': [1, 2, 4]
+        }
+
+        
+        
+        grid_search = GridSearchCV(model_pipeline, param_grid, cv=10, n_jobs= -1, verbose=2)
+        
+        with parallel_backend('threading'):
+            grid_search.fit(train_x, train_y)
+          
+        
+        print("Best Parameters:", grid_search.best_params_) 
+        
+        #Best Parameters: {'model__max_depth': 30, 'model__min_samples_leaf': 1, 'model__min_samples_split': 2, 'model__n_estimators': 300}
+        
+        #Save the pipeline
+        joblib.dump(grid_search, os.path.join(self.config.root_dir, self.config.model_name))
+        
+        #train_x_transformed = preprocessor.transform(train_x)  # Ensure this matches model training
+
+
+        #

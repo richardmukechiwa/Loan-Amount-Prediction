@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/RICH-FILES/Desktop/ml/Loan-Amount-Prediction/mlruns/0/e5e5f26e8d924dc0a48729909fd40df0/artifacts
+end_time: 1743013796320
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e5e5f26e8d924dc0a48729909fd40df0
+run_name: flawless-hen-612
+run_uuid: e5e5f26e8d924dc0a48729909fd40df0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743013796011
+status: 3
+tags: []
+user_id: RICH-1
