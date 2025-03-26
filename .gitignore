@@ -176,3 +176,4 @@ artifacts/*
 
 
 artifacts/model_trainer/model.joblib 
+artifacts/model_trainer/model.joblib 
