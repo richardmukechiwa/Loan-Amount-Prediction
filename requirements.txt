@@ -14,5 +14,6 @@ Flask
 Flask-Cors
 seaborn
 dagshub
+gunicorn
 pyproject.toml
 -e .
