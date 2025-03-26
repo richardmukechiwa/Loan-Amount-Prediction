@@ -91,4 +91,10 @@ RUN pip install -r requirements.txt
 CMD ["python", "app.py"]
 ```
 
+## Model File
+
+The trained model can be downloaded from [Google Drive](https://drive.google.com/file/d/1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL/view?usp=drive_link).
+
+
+
 
