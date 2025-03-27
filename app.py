@@ -67,11 +67,10 @@ def index():
             print('Input DataFrame content:', input_df)
 
             # Load the model using PredictionPipeline
-            obj = PredictionPipeline()  # Using your existing pipeline
             model = load_model()  # Ensure the model is loaded
 
-            # Pass the loaded model to the PredictionPipeline
-            obj.set_model(model)  # Assuming you have a set_model method in your pipeline to set the model
+            # Pass the loaded model directly to the PredictionPipeline constructor
+            obj = PredictionPipeline(model=model)  # Assuming the pipeline accepts the model in its constructor
             predict = obj.predict(input_df)  # Use the prediction method
 
             return render_template('results.html', prediction=predict[0])
