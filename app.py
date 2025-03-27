@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 import pandas as pd
 import joblib
 import gdown
-from credit_risk.pipeline.prediction import PredictionPipeline
+from credit_risk.pipeline.prediction import PredictionPipeline  # Ensure this is correctly imported
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ model_path = '/mnt/models/model.joblib'
 def download_model():
     if not os.path.exists(model_path):
         print("Downloading model...")
-        url = 'https://drive.google.com/uc?export=download&id=1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL'  # Replace with your file ID
+        url = 'https://drive.google.com/uc?export=download&id=your_file_id'  # Replace with your file ID
         gdown.download(url, model_path, quiet=False)
     else:
         print("Model already downloaded.")
@@ -66,9 +66,13 @@ def index():
             print('Input DataFrame shape:', input_df.shape)
             print('Input DataFrame content:', input_df)
 
-            # Load the model and make prediction
-            model = load_model()  # Load the model
-            predict = model.predict(input_df)  # Use the loaded model to make predictions
+            # Load the model using PredictionPipeline
+            obj = PredictionPipeline()  # Using your existing pipeline
+            model = load_model()  # Ensure the model is loaded
+
+            # Pass the loaded model to the PredictionPipeline
+            obj.set_model(model)  # Assuming you have a set_model method in your pipeline to set the model
+            predict = obj.predict(input_df)  # Use the prediction method
 
             return render_template('results.html', prediction=predict[0])
 
