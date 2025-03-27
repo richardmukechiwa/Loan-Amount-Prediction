@@ -1,7 +1,12 @@
 import os
+import logging
 from flask import Flask, render_template, request
 import pandas as pd
 from credit_risk.pipeline.prediction import PredictionPipeline
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
@@ -11,8 +16,13 @@ def homePage():
 
 @app.route('/train', methods=['GET'])
 def training():
-    os.system("python main.py")
-    return "Training Successful!"
+    try:
+        os.system("python main.py")
+        logger.info("Training completed successfully.")
+        return "Training Successful!"
+    except Exception as e:
+        logger.error(f"Error during training: {e}")
+        return f"Training failed: {str(e)}"
 
 @app.route('/predict', methods=['POST', 'GET'])
 def index():
@@ -43,22 +53,26 @@ def index():
             # Convert to DataFrame
             input_df = pd.DataFrame([input_data])
 
-            print('Input DataFrame shape:', input_df.shape)
-            print('Input DataFrame content:', input_df)
+            # Log input DataFrame details
+            logger.info(f"Received input data: {input_df.to_dict(orient='records')[0]}")
+            logger.info(f"Input DataFrame shape: {input_df.shape}")
 
             # Load the model and make prediction
             obj = PredictionPipeline()
             predict = obj.predict(input_df)
 
+            # Log the prediction
+            logger.info(f"Prediction result: {predict[0]}")
+
             return render_template('results.html', prediction=predict[0])
 
         except Exception as e:
-            print('The Exception message is: ', e)
-            return 'Something is wrong: ' + str(e)
-
+            logger.error(f"Error during prediction: {e}")
+            return f'Something went wrong: {str(e)}'
     else:
         return render_template('index.html')
 
 
 if __name__ == "__main__":
-    app.run(host= '0.0.0.0' , port=5000)
+    # Run the Flask app with logging
+    app.run(host='0.0.0.0', port=5000)
