@@ -1,9 +1,29 @@
 import os
 from flask import Flask, render_template, request
 import pandas as pd
+import joblib
+import gdown
 from credit_risk.pipeline.prediction import PredictionPipeline
 
 app = Flask(__name__)
+
+# Define the model path
+model_path = '/mnt/models/model.joblib'
+
+# Function to download the model from Google Drive (if not already downloaded)
+def download_model():
+    if not os.path.exists(model_path):
+        print("Downloading model...")
+        url = 'https://drive.google.com/uc?export=download&id=your_file_id'  # Replace with your file ID
+        gdown.download(url, model_path, quiet=False)
+    else:
+        print("Model already downloaded.")
+
+# Load the model
+def load_model():
+    download_model()  # Ensure the model is downloaded
+    model = joblib.load(model_path)  # Load the model
+    return model
 
 @app.route('/', methods=['GET'])
 def homePage():
@@ -47,8 +67,8 @@ def index():
             print('Input DataFrame content:', input_df)
 
             # Load the model and make prediction
-            obj = PredictionPipeline()
-            predict = obj.predict(input_df)
+            model = load_model()  # Load the model
+            predict = model.predict(input_df)  # Use the loaded model to make predictions
 
             return render_template('results.html', prediction=predict[0])
 

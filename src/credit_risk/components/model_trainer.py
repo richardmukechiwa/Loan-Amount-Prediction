@@ -68,7 +68,7 @@ class ModelTrainer:
 
         
         
-        grid_search = GridSearchCV(model_pipeline, param_grid, cv=10, n_jobs= -1, verbose=2)
+        grid_search = GridSearchCV(model_pipeline, param_grid, cv=5, n_jobs= -1, verbose=2)
         
         with parallel_backend('threading'):
             grid_search.fit(train_x, train_y)
