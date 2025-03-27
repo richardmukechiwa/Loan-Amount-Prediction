@@ -14,7 +14,7 @@ model_path = '/mnt/models/model.joblib'
 def download_model():
     if not os.path.exists(model_path):
         print("Downloading model...")
-        url = 'https://drive.google.com/uc?export=download&id=your_file_id'  # Replace with your file ID
+        url = 'https://drive.google.com/uc?export=download&id=1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL'  # Replace with your file ID
         gdown.download(url, model_path, quiet=False)
     else:
         print("Model already downloaded.")
