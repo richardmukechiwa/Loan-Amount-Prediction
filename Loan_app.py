@@ -2,7 +2,7 @@ import os
 import logging
 import streamlit as st
 import pandas as pd
-from credit_risk.pipeline.prediction import PredictionPipeline
+from loan_amount.pipeline.prediction import PredictionPipeline
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 # Function to train the model
 def train_model():
-    st.subheader("Train the Credit Risk Model")
+    st.subheader("Train the Loan Amount Prediction Model")
     try:
         os.system("python main.py")
         logger.info("Training completed successfully.")
@@ -19,29 +19,29 @@ def train_model():
         logger.error(f"Error during training: {e}")
         st.error(f"Training failed: {str(e)}")
 
-# Function to predict credit risk
-def predict_credit_risk():
-    st.subheader("Enter Loan Applicant Details for Prediction")
+# Function to predict loan amount
+def predict_loan_amount():
+    st.subheader("Enter Borrower Details for Loan Amount Prediction")
 
     # User Inputs
     Income = st.number_input("Income ($)", min_value=0.0, step=100.0)
     Emp_length = st.number_input("Employment Length (Years)", min_value=0.0, step=1.0)
-    Rate = st.number_input("Interest Rate (%)", min_value=0.0, step=0.1)
-    Percent_income = st.number_input("Percent of Income", min_value=0.0, step=0.1)
-    Cred_length = st.number_input("Credit Length (Years)", min_value=0.0, step=1.0)
+    Credit_score = st.number_input("Credit Score", min_value=300, max_value=850, step=1)
+    Debt_to_income_ratio = st.number_input("Debt-to-Income Ratio (%)", min_value=0.0, step=0.1)
+    Existing_loans = st.number_input("Number of Existing Loans", min_value=0, step=1)
 
     Home = st.selectbox("Home Ownership", ["MORTGAGE", "RENT", "OWN", "OTHER"])
-    Intent = st.selectbox("Loan Intent", ["PERSONAL", "DEBTCONSOLIDATION", "EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "VENTURE"])
+    Loan_purpose = st.selectbox("Loan Purpose", ["PERSONAL", "DEBT CONSOLIDATION", "EDUCATION", "HOME IMPROVEMENT", "MEDICAL", "BUSINESS"])
 
-    if st.button("Predict Risk"):
+    if st.button("Predict Loan Amount"):
         input_data = {
             "Income": Income,
             "Emp_length": Emp_length,
-            "Rate": Rate,
-            "Percent_income": Percent_income,
-            "Cred_length": Cred_length,
+            "Credit_score": Credit_score,
+            "Debt_to_income_ratio": Debt_to_income_ratio,
+            "Existing_loans": Existing_loans,
             "Home": Home,
-            "Intent": Intent
+            "Loan_purpose": Loan_purpose
         }
 
         input_df = pd.DataFrame([input_data])
@@ -50,9 +50,9 @@ def predict_credit_risk():
 
         try:
             obj = PredictionPipeline()
-            prediction = obj.predict(input_df)
-            logger.info(f"Prediction result: {prediction[0]}")
-            st.success(f"Predicted Credit Risk: {prediction[0]}")
+            predicted_amount = obj.predict(input_df)
+            logger.info(f"Predicted Loan Amount: ${predicted_amount[0]:,.2f}")
+            st.success(f"Predicted Loan Amount: ${predicted_amount[0]:,.2f}")
         except Exception as e:
             logger.error(f"Error during prediction: {e}")
             st.error(f"Something went wrong: {str(e)}")
@@ -60,18 +60,17 @@ def predict_credit_risk():
 # Function to show documentation
 def view_documentation():
     st.subheader("📄 Documentation")
-    st.write("This app predicts the risk level of a loan applicant using machine learning models.")
+    st.write("This app predicts the maximum loan amount a borrower can qualify for based on financial and personal factors.")
     st.markdown("""
     ### **How It Works**
-    - The model takes various financial and personal attributes as input.
-    - It predicts the likelihood of loan repayment risk.
-    - The model is trained on historical loan data.
+    - The model analyzes the borrower's income, credit score, and other factors.
+    - It predicts the optimal loan amount the borrower can receive.
+    - The model is trained on real-world loan data to ensure accuracy.
 
     **Key Features:**
-    - Predict credit risk based on applicant details.
-    - Train the model using updated data.
+    - Predict loan amount eligibility.
+    - Train the model with updated data.
     - View source code for transparency.
-
     """)
 
 # Function to show source code link
@@ -84,8 +83,8 @@ def view_source_code():
 def about_app():
     st.subheader("ℹ️ About This App")
     st.write("""
-    This application helps financial institutions assess the risk associated with a loan applicant.
-    It utilizes machine learning to predict whether an applicant is a high or low credit risk.
+    This application helps borrowers estimate the loan amount they can receive based on their financial profile.
+    It uses machine learning to provide accurate predictions, assisting users in making informed financial decisions.
     """)
 
 # Function to display Contact information
@@ -102,18 +101,18 @@ def exit_app():
 
 # Main function for UI
 def main():
-    st.title("📊 Credit Risk Prediction App")
+    st.title("📊 Loan Amount Prediction App")
     
     html_temp = """
     <div style="background-color:blue;padding:10px">
-    <h2 style="color:white;text-align:center;">Credit Risk Prediction</h2>  
+    <h2 style="color:white;text-align:center;">Loan Amount Prediction</h2>  
     </div>  
     """
     st.markdown(html_temp, unsafe_allow_html=True)
 
     # Sidebar Navigation
     menu = {
-        "Predict Credit Risk": predict_credit_risk,
+        "Predict Loan Amount": predict_loan_amount,
         "Train Model": train_model,
         "View Documentation": view_documentation,
         "View Source Code": view_source_code,
