@@ -29,7 +29,7 @@ list_of_files = [
     "static",
     "Dockerfile",
     "requirements.txt",
-    "setup.py",
+    "pyproject.toml",
     "research/trials.ipynb",
     "templates/index.html",
       
