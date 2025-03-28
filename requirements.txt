@@ -16,7 +16,7 @@ seaborn
 dagshub
 gunicorn
 gdown
-pyarrow>=10.0.1
-
+pyproject.toml
+pyarrow
 
 -e .
