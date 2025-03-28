@@ -16,7 +16,7 @@ class PredictionPipeline:
     def predict(self, raw_data):
         """
         Accepts raw input data (dictionary or DataFrame),
-        applies transformations, and makes predictions.
+        applies transformations, and makes predictions.cls
         """
         # Ensure input is a DataFrame
         if isinstance(raw_data, dict):  # If single sample, convert to DataFrame

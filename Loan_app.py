@@ -57,6 +57,11 @@ def predict_credit_risk():
 # Streamlit UI
 def main():
     st.title("Credit Risk Prediction")
+    html_temp = """
+    <div style="background-color:blue;padding:10px">
+    <h2 style="color:white;text-align:center;">Credit Risk Prediction App</h2>  
+    </div>  
+    """
     menu = ["Home", "Train Model", "Predict"]
     choice = st.sidebar.selectbox("Menu", menu)
 
