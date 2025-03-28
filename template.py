@@ -24,6 +24,7 @@ list_of_files = [
     "schema.yaml",
     "main.py",
     "app.py",
+    "Loan_app.py",
     "train.py",
     "static",
     "Dockerfile",
