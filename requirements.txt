@@ -16,5 +16,5 @@ seaborn
 dagshub
 gunicorn
 gdown
-pyproject.toml
+
 -e .
