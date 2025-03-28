@@ -176,3 +176,4 @@ cython_debug/
 
 # But don't ignore the specific model file
 !artifacts/model_trainer/model.joblib
+artifacts/model_trainer/model.joblib*
