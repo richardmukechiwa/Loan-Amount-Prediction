@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "credit_risk"
+version = "0.0.0"
+description = "A loan amount prediction app"
+authors = [{ name = "richardmukechiwa", email = "mukechiwarichard@gmail.com" }]
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = []
