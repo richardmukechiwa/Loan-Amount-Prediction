@@ -62,6 +62,18 @@ def main():
     <h2 style="color:white;text-align:center;">Credit Risk Prediction App</h2>  
     </div>  
     """
+    st.markdown(html_temp, unsafe_allow_html=True)
+    st.sidebar.title("Navigation")  
+    st.sidebar.write("Select an option:")
+    st.sidebar.write("[1] Predict Credit Risk")         
+    st.sidebar.write("[2] View Documentation")
+    st.sidebar.write("[3] View Source Code")
+    st.sidebar.write("[4] About")
+    st.sidebar.write("[5] Contact Us")
+    st.sidebar.write("[6] Exit")    
+    
+    
+    
     menu = ["Home", "Train Model", "Predict"]
     choice = st.sidebar.selectbox("Menu", menu)
 
