@@ -16,7 +16,8 @@ MODEL_URL = 'https://drive.google.com/uc?id=1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL'  
 def download_model():
     """Downloads the model from Google Drive if it isn't already present."""
     try:
-        model_path = 'model.joblib'
+        model_path = 'artifacts/model_trainer/model.joblib'  # Path to save the model
+        os.makedirs(os.path.dirname(model_path), exist_ok=True)  # Ensure the directory exists
         if not os.path.exists(model_path):  # Check if the model file already exists
             gdown.download(MODEL_URL, model_path, quiet=False)
             logger.info("Model downloaded successfully.")
