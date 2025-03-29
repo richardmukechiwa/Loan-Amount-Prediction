@@ -49,15 +49,15 @@ class PredictionPipeline:
         else:
             raise ValueError("Model is not loaded.")
 
-def train_model():
-    """Retrains the loan amount prediction model."""
-    try:
-        os.system("python main.py")
-        logger.info("Training completed successfully.")
-        st.success("Model Training Successful!")
-    except Exception as e:
-        logger.error(f"Error during training: {e}")
-        st.error(f"Training failed: {str(e)}")
+    def train_model():
+        """Retrains the loan amount prediction model."""
+        try:
+            os.system("python main.py")
+            logger.info("Training completed successfully.")
+            st.success("Model Training Successful!")
+        except Exception as e:
+            logger.error(f"Error during training: {e}")
+            st.error(f"Training failed: {str(e)}")
 
 def predict_loan_amount():
     """Takes user input and predicts the loan amount they can receive."""
