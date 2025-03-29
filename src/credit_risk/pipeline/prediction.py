@@ -2,7 +2,6 @@ from pathlib import Path
 import joblib
 import pandas as pd
 import os
-import gdown
 
 class PredictionPipeline:
     def __init__(self):
