@@ -60,11 +60,14 @@ class PredictionPipeline:
             logger.error(f"Error during training: {e}")
             st.error(f"Training failed: {str(e)}")
 
-def predict_loan_amount():
-    """Takes user input and predicts the loan amount they can receive."""
-    try:
-        st.subheader("Enter Details for Loan Amount Prediction")
-        
+    def predict_loan_amount():
+        """Takes user input and predicts the loan amount they can receive."""
+        try:
+            st.subheader("Enter Details for Loan Amount Prediction")
+        except Exception as e:
+            logger.error(f"Error during training: {e}")
+            st.error(f"Training failed: {str(e)}")
+            
         # Numerical Inputs
         Income = st.number_input("Income ($)", min_value=0.0, step=100.0)
         Emp_length = st.number_input("Employment Length (Years)", min_value=0.0, step=1.0)
@@ -99,47 +102,47 @@ def predict_loan_amount():
         logger.error(f"Error during prediction: {e}")
         st.error(f"Something went wrong: {str(e)}")
 
-def main():
-    """Main function to run the Streamlit app."""
-    st.title("Loan Amount Prediction App")
-    
-    html_temp = """
-    <div style="background-color:blue;padding:10px">
-    <h2 style="color:white;text-align:center;">Loan Amount Prediction</h2>  
-    </div>  
-    """
-    st.markdown(html_temp, unsafe_allow_html=True)
-    
-    # Sidebar Navigation
-    st.sidebar.title("Navigation")
-    option = st.sidebar.radio("Select an option:", [
-        "Predict Loan Amount",
-        "Train Model",
-        "View Documentation",
-        "View Source Code",
-        "About",
-        "Contact Us",
-        "Exit"
-    ])
-    
-    if option == "Predict Loan Amount":
-        predict_loan_amount()
-    elif option == "Train Model":
-        train_model()
-    elif option == "View Documentation":
-        st.subheader("Documentation")
-        st.write("This app predicts the loan amount a borrower can receive based on various financial factors.")
-    elif option == "View Source Code":
-        st.subheader("Source Code")
-        st.write("Check out the source code on GitHub: [Loan Amount Prediction Repo](https://github.com/richardmukechiwa/Loan-Amount-Prediction)")
-    elif option == "About":
-        st.subheader("About the App")
-        st.write("This application helps users estimate the loan amount they may qualify for based on their financial profile.")
-    elif option == "Contact Us":
-        st.subheader("Contact Information")
-        st.write("For inquiries, reach out via email at [mukechiwarichard@gmail.com](mailto:mukechiwarichard@gmail.com)")
-    elif option == "Exit":
-        st.write("Thank you for using the Loan Amount Prediction App!")
-    
-if __name__ == "__main__":
-    main()
+    def main():
+        """Main function to run the Streamlit app."""
+        st.title("Loan Amount Prediction App")
+        
+        html_temp = """
+        <div style="background-color:blue;padding:10px">
+        <h2 style="color:white;text-align:center;">Loan Amount Prediction</h2>  
+        </div>  
+        """
+        st.markdown(html_temp, unsafe_allow_html=True)
+        
+        # Sidebar Navigation
+        st.sidebar.title("Navigation")
+        option = st.sidebar.radio("Select an option:", [
+            "Predict Loan Amount",
+            "Train Model",
+            "View Documentation",
+            "View Source Code",
+            "About",
+            "Contact Us",
+            "Exit"
+        ])
+        
+        if option == "Predict Loan Amount":
+            predict_loan_amount()
+        elif option == "Train Model":
+            train_model()
+        elif option == "View Documentation":
+            st.subheader("Documentation")
+            st.write("This app predicts the loan amount a borrower can receive based on various financial factors.")
+        elif option == "View Source Code":
+            st.subheader("Source Code")
+            st.write("Check out the source code on GitHub: [Loan Amount Prediction Repo](https://github.com/richardmukechiwa/Loan-Amount-Prediction)")
+        elif option == "About":
+            st.subheader("About the App")
+            st.write("This application helps users estimate the loan amount they may qualify for based on their financial profile.")
+        elif option == "Contact Us":
+            st.subheader("Contact Information")
+            st.write("For inquiries, reach out via email at [mukechiwarichard@gmail.com](mailto:mukechiwarichard@gmail.com)")
+        elif option == "Exit":
+            st.write("Thank you for using the Loan Amount Prediction App!")
+        
+    if __name__ == "__main__":
+        main()
