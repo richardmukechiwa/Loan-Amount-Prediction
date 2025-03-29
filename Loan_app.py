@@ -1,4 +1,6 @@
 import os
+import gdown
+import joblib
 import logging
 import streamlit as st
 import pandas as pd
@@ -7,6 +9,45 @@ from credit_risk.pipeline.prediction import PredictionPipeline
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# URL for the Google Drive model file
+MODEL_URL = 'https://drive.google.com/uc?id=1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL'  # Your model ID
+
+def download_model():
+    """Downloads the model from Google Drive if it isn't already present."""
+    try:
+        model_path = 'model.joblib'
+        if not os.path.exists(model_path):  # Check if the model file already exists
+            gdown.download(MODEL_URL, model_path, quiet=False)
+            logger.info("Model downloaded successfully.")
+        else:
+            logger.info("Model already exists. Skipping download.")
+    except Exception as e:
+        logger.error(f"Error during model download: {e}")
+        st.error(f"Failed to download model: {str(e)}")
+
+class PredictionPipeline:
+    """Class to handle the prediction pipeline."""
+    def __init__(self):
+        self.model = None
+        download_model()  # Download the model if it isn't already present
+        self.load_model()
+
+    def load_model(self):
+        """Loads the trained model from file."""
+        try:
+            self.model = joblib.load('model.joblib')  # Load the model from the file
+            logger.info("Model loaded successfully.")
+        except Exception as e:
+            logger.error(f"Error loading the model: {e}")
+            st.error(f"Failed to load model: {str(e)}")
+    
+    def predict(self, input_data):
+        """Make a prediction using the trained model."""
+        if self.model:
+            return self.model.predict(input_data)  # Use the model to predict
+        else:
+            raise ValueError("Model is not loaded.")
 
 def train_model():
     """Retrains the loan amount prediction model."""
