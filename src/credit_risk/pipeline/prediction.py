@@ -1,7 +1,8 @@
+import os
 from pathlib import Path
 import joblib
 import pandas as pd
-import os
+
 
 class PredictionPipeline:
     def __init__(self):
