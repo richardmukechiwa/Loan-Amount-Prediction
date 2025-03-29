@@ -57,7 +57,7 @@ def predict_loan_amount():
         logger.error(f"Error during prediction: {e}")
         st.error(f"Something went wrong: {str(e)}")
 
-def main():
+pydef main():
     """Main function to run the Streamlit app."""
     st.title("Loan Amount Prediction App")
     
