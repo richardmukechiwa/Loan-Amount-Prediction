@@ -172,9 +172,12 @@ cython_debug/
 .pypirc
 
 # Ignore everything inside artifacts/
+artifacts/*
+# But don't ignore the specific artifacts folders
+!artifacts/model_trainer/*   
+
 
 
 # But don't ignore the specific model file
 !artifacts/model_trainer/model.joblib
-artifacts/model_trainer/model.joblib*
-artifacts/model_trainer/model.joblib*
+
