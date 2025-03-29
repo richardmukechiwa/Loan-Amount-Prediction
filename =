@@ -1,7 +1,0 @@
-Requirement already satisfied: pyarrow in c:\users\rich-files\anacoda4\envs\ln\lib\site-packages (11.0.0)
-Collecting 6
-  Downloading 6-6-py3-none-any.whl.metadata (174 bytes)
-Requirement already satisfied: numpy>=1.16.6 in c:\users\rich-files\anacoda4\envs\ln\lib\site-packages (from pyarrow) (1.26.4)
-Downloading 6-6-py3-none-any.whl (919 bytes)
-Installing collected packages: 6
-Successfully installed 6-6
