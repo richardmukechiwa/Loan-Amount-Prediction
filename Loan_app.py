@@ -2,7 +2,7 @@ import os
 import logging
 import streamlit as st
 import pandas as pd
-from credit_risk.pipeline.prediction import PredictionPipeline
+from src.credit_risk.pipeline.prediction import PredictionPipeline
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
