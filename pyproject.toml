@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=64", "wheel"]
+requires = ["cmake", "setuptools", "wheel", "pyarrow"]
 build-backend = "setuptools.build_meta"
 
 [project]
