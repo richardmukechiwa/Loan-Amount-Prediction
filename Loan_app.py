@@ -98,9 +98,9 @@ class PredictionPipeline:
             
             logger.info(f"Predicted Loan Amount: {predicted_loan[0]}")
             st.success(f"Estimated Loan Amount: ${predicted_loan[0]:,.2f}")
-    except Exception as e:
-        logger.error(f"Error during prediction: {e}")
-        st.error(f"Something went wrong: {str(e)}")
+        except Exception as e:
+            logger.error(f"Error during prediction: {e}")
+            st.error(f"Something went wrong: {str(e)}")
 
     def main():
         """Main function to run the Streamlit app."""
