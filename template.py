@@ -27,8 +27,8 @@ list_of_files = [
     "train.py",
     "Dockerfile",
     "requirements.txt",
-    "pyproject.toml",
-    "research/trials.ipynb"
+    "setup.py",
+     "research/trials.ipynb"
       
 ]
 
