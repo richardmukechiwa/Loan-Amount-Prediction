@@ -79,9 +79,12 @@ class ModelTrainer:
         #Best Parameters: {'model__max_depth': 30, 'model__min_samples_leaf': 1, 'model__min_samples_split': 2, 'model__n_estimators': 300}
         
         #Save the pipeline
-        joblib.dump(grid_search, os.path.join(self.config.root_dir, self.config.model_name))
+        #joblib.dump(grid_search, os.path.join(self.config.root_dir, self.config.model_name))
         
         #train_x_transformed = preprocessor.transform(train_x)  # Ensure this matches model training
 
-
-        #
+        # Save only the best estimator
+        best_model = grid_search.best_estimator_
+        joblib.dump(best_model, os.path.join(self.config.root_dir, self.config.model_name), compress=3)
+            # Save the model with compression
+        print("Model saved successfully.")  

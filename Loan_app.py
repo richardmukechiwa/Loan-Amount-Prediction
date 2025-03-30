@@ -11,24 +11,6 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-# Function to download the model from Google Drive
-def download_model():
-    """Download the model from Google Drive to the local directory."""
-    file_id = '1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL'
-    url = f'https://drive.google.com/uc?id={file_id}'
-    output = 'model.joblib'
-    gdown.download(url, output, quiet=False)
-    print("Model downloaded successfully.")
-
-# Caching the model loading to avoid downloading on every run using st.cache_resource
-@st.cache_resource
-def load_model():
-    """Load the pre-trained model from Google Drive."""
-    if not os.path.exists('model.joblib'):
-        download_model()  # Download the model if it's not already present
-    model = joblib.load('model.joblib')  # Load the model
-    return model
-
 class PredictionPipeline:
     """Class to handle the prediction pipeline."""
     def __init__(self):
