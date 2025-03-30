@@ -10,21 +10,24 @@ from credit_risk.pipeline.prediction import PredictionPipeline
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# URL for the Google Drive model file
-MODEL_URL = 'https://drive.google.com/uc?id=1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL'  # Your model ID
 
+# Function to download the model from Google Drive
 def download_model():
-    """Downloads the model from Google Drive if it isn't already present."""
-    try:
-        model_path = 'model.joblib'
-        if not os.path.exists(model_path):  # Check if the model file already exists
-            gdown.download(MODEL_URL, model_path, quiet=False)
-            logger.info("Model downloaded successfully.")
-        else:
-            logger.info("Model already exists. Skipping download.")
-    except Exception as e:
-        logger.error(f"Error during model download: {e}")
-        st.error(f"Failed to download model: {str(e)}")
+    """Download the model from Google Drive to the local directory."""
+    file_id = '1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL'
+    url = f'https://drive.google.com/uc?id={file_id}'
+    output = 'model.joblib'
+    gdown.download(url, output, quiet=False)
+    print("Model downloaded successfully.")
+
+# Caching the model loading to avoid downloading on every run using st.cache_resource
+@st.cache_resource
+def load_model():
+    """Load the pre-trained model from Google Drive."""
+    if not os.path.exists('model.joblib'):
+        download_model()  # Download the model if it's not already present
+    model = joblib.load('model.joblib')  # Load the model
+    return model
 
 class PredictionPipeline:
     """Class to handle the prediction pipeline."""

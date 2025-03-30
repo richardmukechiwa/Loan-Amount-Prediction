@@ -23,7 +23,6 @@ list_of_files = [
     "params.yaml",
     "schema.yaml",
     "main.py",
-    "app.py",
     "loan_app.py",
     "train.py",
     "static",
