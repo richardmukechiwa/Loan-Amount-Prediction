@@ -8,8 +8,7 @@ from credit_risk.pipeline.prediction import PredictionPipeline
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-#
-
+#train the model
 def train_model():
     """Retrains the loan amount prediction model."""
     try:
@@ -60,14 +59,24 @@ def predict_loan_amount():
 
 def main():
     """Main function to run the Streamlit app."""
-    st.title("Loan Amount Prediction App")
-
-    html_temp = """
-    <div style="background-color:blue;padding:10px">
-    <h2 style="color:white;text-align:center;">Loan Amount Prediction</h2>  
-    </div>  
-    """
-    st.markdown(html_temp, unsafe_allow_html=True)
+    # Add a visually appealing title with a gradient background
+    st.markdown(
+        """
+        <style>
+        .main-title {
+            background: linear-gradient(to right, #1f4037, #99f2c8);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        </style>
+        <div class="main-title">
+            <h1>Loan Amount Prediction App</h1>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # Sidebar Navigation
     st.sidebar.title("Navigation")
@@ -81,25 +90,30 @@ def main():
         "Exit"
     ])
 
+    # Handle navigation options
     if option == "Predict Loan Amount":
+        st.subheader("📊 Predict Loan Amount")
+        st.write("Provide your financial details to estimate the loan amount you may qualify for.")
         predict_loan_amount()
     elif option == "Train Model":
+        st.subheader("🔧 Train the Model")
+        st.write("Retrain the loan prediction model with updated data.")
         train_model()
     elif option == "View Documentation":
-        st.subheader("Documentation")
+        st.subheader("📄 Documentation")
         st.write("This app predicts the loan amount a borrower can receive based on various financial factors.")
     elif option == "View Source Code":
-        st.subheader("Source Code")
+        st.subheader("💻 Source Code")
         st.write("Check out the source code on GitHub: [Loan Amount Prediction Repo](https://github.com/richardmukechiwa/Loan-Amount-Prediction)")
     elif option == "About":
-        st.subheader("About the App")
+        st.subheader("ℹ️ About the App")
         st.write("This application helps users estimate the loan amount they may qualify for based on their financial profile.")
     elif option == "Contact Us":
-        st.subheader("Contact Information")
+        st.subheader("📧 Contact Information")
         st.write("For inquiries, reach out via email at [mukechiwarichard@gmail.com](mailto:mukechiwarichard@gmail.com)")
     elif option == "Exit":
         st.write("Thank you for using the Loan Amount Prediction App!")
-
+        
 if __name__ == "__main__":
     main()
 
