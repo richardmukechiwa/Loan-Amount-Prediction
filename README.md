@@ -10,7 +10,6 @@
 8. Update main.py
 9. Update the app.py
 
-```
 # Loan Amount Prediction App
 
 ![Loan Amount Prediction](https://via.placeholder.com/800x200.png?text=Loan+Amount+Prediction+App)
@@ -18,7 +17,6 @@
 ## 📖 Overview
 The **Loan Amount Prediction App** is a machine learning-powered web application that predicts the loan amount a borrower may qualify for based on their financial profile. The app is built using **Streamlit** for the frontend and integrates a trained machine learning pipeline for predictions.
 
----
 
 ## 🚀 Features
 - **Loan Amount Prediction**: Users can input their financial details to estimate the loan amount they may qualify for.
