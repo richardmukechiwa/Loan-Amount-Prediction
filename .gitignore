@@ -173,6 +173,9 @@ cython_debug/
 
 # Ignore everything inside artifacts/
 artifacts/*
-model.joblib
+
+# But not the artifacts/model_trainer/model.joblib file
+
+
 
 

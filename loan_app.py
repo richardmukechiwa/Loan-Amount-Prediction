@@ -1,33 +1,14 @@
 import os
 import logging
 import streamlit as st
-import pandas as pd
 import joblib
-import gdown  # Import gdown for downloading files
 from credit_risk.pipeline.prediction import PredictionPipeline
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
-# Function to download the model from Google Drive
-def download_model():
-    """Download the model from Google Drive to the local directory."""
-    file_id = '1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL'
-    url = f'https://drive.google.com/uc?id={file_id}'
-    output = 'model.joblib'
-    gdown.download(url, output, quiet=False)
-    print("Model downloaded successfully.")
-
-# Caching the model loading to avoid downloading on every run using st.cache_resource
-@st.cache_resource
-def load_model():
-    """Load the pre-trained model from Google Drive."""
-    if not os.path.exists('model.joblib'):
-        download_model()  # Download the model if it's not already present
-    model = joblib.load('model.joblib')  # Load the model
-    return model
+#
 
 def train_model():
     """Retrains the loan amount prediction model."""
@@ -35,26 +16,26 @@ def train_model():
         os.system("python main.py")
         logger.info("Training completed successfully.")
         st.success("Model Training Successful!")
+    except Exception as e:
         logger.error("Error during training: %s", e)
-        logger.error(f"Error during training: {e}")
         st.error(f"Training failed: {str(e)}")
 
 def predict_loan_amount():
     """Takes user input and predicts the loan amount they can receive."""
     try:
         st.subheader("Enter Details for Loan Amount Prediction")
-        
+
         # Numerical Inputs
         Income = st.number_input("Income ($)", min_value=0.0, step=100.0)
         Emp_length = st.number_input("Employment Length (Years)", min_value=0.0, step=1.0)
         Rate = st.number_input("Interest Rate (%)", min_value=0.0, step=0.1)
         Percent_income = st.number_input("Percent of Income for Loan (%)", min_value=0.0, step=0.1)
         Cred_length = st.number_input("Credit Length (Years)", min_value=0.0, step=1.0)
-        
+
         # Categorical Inputs
         Home = st.selectbox("Home Ownership", ["MORTGAGE", "RENT", "OWN", "OTHER"])
         Intent = st.selectbox("Loan Intent", ["PERSONAL", "DEBTCONSOLIDATION", "EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "VENTURE"])
-        
+
         if st.button("Predict Loan Amount"):
             input_data = {
                 "Income": Income,
@@ -65,30 +46,29 @@ def predict_loan_amount():
                 "Home": Home,
                 "Intent": Intent
             }
-            
-            logger.info("Received input data: %s", input_df.to_dict(orient='records')[0])
-            logger.info(f"Received input data: {input_df.to_dict(orient='records')[0]}")
-            
+
+            logger.info("Received input data: %s", input_data)
+
             obj = PredictionPipeline()
-            predicted_loan = obj.predict(input_df)
+            predicted_loan = obj.predict(input_data)
             logger.info("Predicted Loan Amount: %s", predicted_loan[0])
-            logger.info(f"Predicted Loan Amount: {predicted_loan[0]}")
             st.success(f"Estimated Loan Amount: ${predicted_loan[0]:,.2f}")
+
+    except Exception as e:
         logger.error("Error during prediction: %s", e)
-        logger.error(f"Error during prediction: {e}")
         st.error(f"Something went wrong: {str(e)}")
 
 def main():
     """Main function to run the Streamlit app."""
     st.title("Loan Amount Prediction App")
-    
+
     html_temp = """
     <div style="background-color:blue;padding:10px">
     <h2 style="color:white;text-align:center;">Loan Amount Prediction</h2>  
     </div>  
     """
     st.markdown(html_temp, unsafe_allow_html=True)
-    
+
     # Sidebar Navigation
     st.sidebar.title("Navigation")
     option = st.sidebar.radio("Select an option:", [
@@ -100,7 +80,7 @@ def main():
         "Contact Us",
         "Exit"
     ])
-    
+
     if option == "Predict Loan Amount":
         predict_loan_amount()
     elif option == "Train Model":
@@ -119,6 +99,7 @@ def main():
         st.write("For inquiries, reach out via email at [mukechiwarichard@gmail.com](mailto:mukechiwarichard@gmail.com)")
     elif option == "Exit":
         st.write("Thank you for using the Loan Amount Prediction App!")
-    
+
 if __name__ == "__main__":
     main()
+
