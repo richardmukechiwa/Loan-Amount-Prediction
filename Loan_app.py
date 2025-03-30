@@ -16,8 +16,7 @@ MODEL_URL = 'https://drive.google.com/uc?id=1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL'  
 def download_model():
     """Downloads the model from Google Drive if it isn't already present."""
     try:
-        model_path = 'artifacts/model_trainer/model.joblib'  # Path to save the model
-        os.makedirs(os.path.dirname(model_path), exist_ok=True)  # Ensure the directory exists
+        model_path = 'model.joblib'
         if not os.path.exists(model_path):  # Check if the model file already exists
             gdown.download(MODEL_URL, model_path, quiet=False)
             logger.info("Model downloaded successfully.")
@@ -50,24 +49,21 @@ class PredictionPipeline:
         else:
             raise ValueError("Model is not loaded.")
 
-    def train_model():
-        """Retrains the loan amount prediction model."""
-        try:
-            os.system("python main.py")
-            logger.info("Training completed successfully.")
-            st.success("Model Training Successful!")
-        except Exception as e:
-            logger.error(f"Error during training: {e}")
-            st.error(f"Training failed: {str(e)}")
+def train_model():
+    """Retrains the loan amount prediction model."""
+    try:
+        os.system("python main.py")
+        logger.info("Training completed successfully.")
+        st.success("Model Training Successful!")
+    except Exception as e:
+        logger.error(f"Error during training: {e}")
+        st.error(f"Training failed: {str(e)}")
 
-    def predict_loan_amount():
-        """Takes user input and predicts the loan amount they can receive."""
-        try:
-            st.subheader("Enter Details for Loan Amount Prediction")
-        except Exception as e:
-            logger.error(f"Error during training: {e}")
-            st.error(f"Training failed: {str(e)}")
-            
+def predict_loan_amount():
+    """Takes user input and predicts the loan amount they can receive."""
+    try:
+        st.subheader("Enter Details for Loan Amount Prediction")
+        
         # Numerical Inputs
         Income = st.number_input("Income ($)", min_value=0.0, step=100.0)
         Emp_length = st.number_input("Employment Length (Years)", min_value=0.0, step=1.0)
@@ -98,51 +94,51 @@ class PredictionPipeline:
             
             logger.info(f"Predicted Loan Amount: {predicted_loan[0]}")
             st.success(f"Estimated Loan Amount: ${predicted_loan[0]:,.2f}")
-        except Exception as e:
-            logger.error(f"Error during prediction: {e}")
-            st.error(f"Something went wrong: {str(e)}")
+    except Exception as e:
+        logger.error(f"Error during prediction: {e}")
+        st.error(f"Something went wrong: {str(e)}")
 
-    def main():
-        """Main function to run the Streamlit app."""
-        st.title("Loan Amount Prediction App")
-        
-        html_temp = """
-        <div style="background-color:blue;padding:10px">
-        <h2 style="color:white;text-align:center;">Loan Amount Prediction</h2>  
-        </div>  
-        """
-        st.markdown(html_temp, unsafe_allow_html=True)
-        
-        # Sidebar Navigation
-        st.sidebar.title("Navigation")
-        option = st.sidebar.radio("Select an option:", [
-            "Predict Loan Amount",
-            "Train Model",
-            "View Documentation",
-            "View Source Code",
-            "About",
-            "Contact Us",
-            "Exit"
-        ])
-        
-        if option == "Predict Loan Amount":
-            predict_loan_amount()
-        elif option == "Train Model":
-            train_model()
-        elif option == "View Documentation":
-            st.subheader("Documentation")
-            st.write("This app predicts the loan amount a borrower can receive based on various financial factors.")
-        elif option == "View Source Code":
-            st.subheader("Source Code")
-            st.write("Check out the source code on GitHub: [Loan Amount Prediction Repo](https://github.com/richardmukechiwa/Loan-Amount-Prediction)")
-        elif option == "About":
-            st.subheader("About the App")
-            st.write("This application helps users estimate the loan amount they may qualify for based on their financial profile.")
-        elif option == "Contact Us":
-            st.subheader("Contact Information")
-            st.write("For inquiries, reach out via email at [mukechiwarichard@gmail.com](mailto:mukechiwarichard@gmail.com)")
-        elif option == "Exit":
-            st.write("Thank you for using the Loan Amount Prediction App!")
-        
-    if __name__ == "__main__":
-        main()
+def main():
+    """Main function to run the Streamlit app."""
+    st.title("Loan Amount Prediction App")
+    
+    html_temp = """
+    <div style="background-color:blue;padding:10px">
+    <h2 style="color:white;text-align:center;">Loan Amount Prediction</h2>  
+    </div>  
+    """
+    st.markdown(html_temp, unsafe_allow_html=True)
+    
+    # Sidebar Navigation
+    st.sidebar.title("Navigation")
+    option = st.sidebar.radio("Select an option:", [
+        "Predict Loan Amount",
+        "Train Model",
+        "View Documentation",
+        "View Source Code",
+        "About",
+        "Contact Us",
+        "Exit"
+    ])
+    
+    if option == "Predict Loan Amount":
+        predict_loan_amount()
+    elif option == "Train Model":
+        train_model()
+    elif option == "View Documentation":
+        st.subheader("Documentation")
+        st.write("This app predicts the loan amount a borrower can receive based on various financial factors.")
+    elif option == "View Source Code":
+        st.subheader("Source Code")
+        st.write("Check out the source code on GitHub: [Loan Amount Prediction Repo](https://github.com/richardmukechiwa/Loan-Amount-Prediction)")
+    elif option == "About":
+        st.subheader("About the App")
+        st.write("This application helps users estimate the loan amount they may qualify for based on their financial profile.")
+    elif option == "Contact Us":
+        st.subheader("Contact Information")
+        st.write("For inquiries, reach out via email at [mukechiwarichard@gmail.com](mailto:mukechiwarichard@gmail.com)")
+    elif option == "Exit":
+        st.write("Thank you for using the Loan Amount Prediction App!")
+    
+if __name__ == "__main__":
+    main()
