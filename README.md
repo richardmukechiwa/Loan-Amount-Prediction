@@ -100,27 +100,39 @@ streamlit run loan_app.py
    ```
 
 📁 Key Files
-loan_app.py: Main Streamlit app for user interaction.
-artifacts/model_trainer/model.joblib: Trained machine learning model.
-src/credit_risk/pipeline/prediction.py: Prediction pipeline for processing input and generating predictions.
-main.py: Script for training the machine learning model.
-requirements.txt: List of Python dependencies.
-Dockerfile: Configuration for containerizing the app.
+
+- loan_app.py: Main Streamlit app for user interaction.
+
+- artifacts/model_trainer/model.joblib: Trained machine learning model.
+  
+- src/credit_risk/pipeline/prediction.py: Prediction pipeline for processing input and 
+  generating predictions.
+
+- main.py: Script for training the machine learning model.
+  
+- requirements.txt: List of Python dependencies.
+  
+- Dockerfile: Configuration for containerizing the app.
 
 📊 DagsHub Integration
+
 This project uses DagsHub for:
 
-Dataset Versioning: Track and version datasets used for training.
-Model Versioning: Store and version trained models for reproducibility.
-Experiment Tracking: Log and visualize experiments, including hyperparameters and metrics.
-How to Access the DagsHub Repository
-You can access the DagsHub repository for this project here: DagsHub Repository
+- Dataset Versioning: Track and version datasets used for training.
+
+- Model Versioning: Store and version trained models for reproducibility.
+  
+- Experiment Tracking: Log and visualize experiments, including hyperparameters and metrics.
+  
+  How to Access the DagsHub Repository
+  
+- You can access the DagsHub repository for this project here: DagsHub Repository
 
 How to Use DagsHub in This Project
 
 1. Clone the DagsHub repository:
 
-dagshub clone YOUR_USERNAME/Loan-Amount-Prediction
+dagshub clone richardm/Loan-Amount-Prediction
 cd Loan-Amount-Prediction
 
 2. Push datasets or models to DagsHub:
@@ -133,7 +145,7 @@ git push origin main
    - Configure MLflow to log experiments to DagsHub:
 
 import mlflow
-mlflow.set_tracking_uri("https://dagshub.com/YOUR_USERNAME/Loan-Amount-Prediction.mlflow")  
+mlflow.set_tracking_uri("https://dagshub.com/richardmukechiwa/Loan-Amount-Prediction.mlflow")  
 
 
 🧪 Example Input and Output
@@ -168,10 +180,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ---
 
-### **How to Use This README**
-1. Replace placeholders like `YOUR_FILE_ID` or `path_to_logo.png` with actual values.
-2. Add any additional details specific to your project.
-3. Ensure the links (e.g., GitHub repo) are correct.
-
-This README will make your project look professional and appealing to recruiters. Let me know if you need further assistance!
 
