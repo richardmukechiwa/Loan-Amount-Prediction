@@ -12,7 +12,7 @@
 
 # Loan Amount Prediction App
 
-![Loan Amount Prediction](https://loan-amount-prediction-v5wxdubjubukkct6memh5n.streamlit.app/)
+[Loan Amount Prediction](https://loan-amount-prediction-v5wxdubjubukkct6memh5n.streamlit.app/)
 
 ## 📖 Overview
 The **Loan Amount Prediction App** is a machine learning-powered web application that predicts the loan amount a borrower may qualify for based on their financial profile. The app is built using **Streamlit** for the frontend and integrates a trained machine learning pipeline for predictions.
