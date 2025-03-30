@@ -2,11 +2,32 @@ import os
 import logging
 import streamlit as st
 import pandas as pd
+import joblib
+import gdown  # Import gdown for downloading files
 from credit_risk.pipeline.prediction import PredictionPipeline
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+
+# Function to download the model from Google Drive
+def download_model():
+    """Download the model from Google Drive to the local directory."""
+    file_id = '1QAGYRh8euKBonvOrSdzPlAx_RsQDQ-jL'
+    url = f'https://drive.google.com/uc?id={file_id}'
+    output = 'model.joblib'
+    gdown.download(url, output, quiet=False)
+    print("Model downloaded successfully.")
+
+# Caching the model loading to avoid downloading on every run using st.cache_resource
+@st.cache_resource
+def load_model():
+    """Load the pre-trained model from Google Drive."""
+    if not os.path.exists('model.joblib'):
+        download_model()  # Download the model if it's not already present
+    model = joblib.load('model.joblib')  # Load the model
+    return model
 
 def train_model():
     """Retrains the loan amount prediction model."""
@@ -14,7 +35,7 @@ def train_model():
         os.system("python main.py")
         logger.info("Training completed successfully.")
         st.success("Model Training Successful!")
-    except Exception as e:
+        logger.error("Error during training: %s", e)
         logger.error(f"Error during training: {e}")
         st.error(f"Training failed: {str(e)}")
 
@@ -45,15 +66,15 @@ def predict_loan_amount():
                 "Intent": Intent
             }
             
-            input_df = pd.DataFrame([input_data])
+            logger.info("Received input data: %s", input_df.to_dict(orient='records')[0])
             logger.info(f"Received input data: {input_df.to_dict(orient='records')[0]}")
             
             obj = PredictionPipeline()
             predicted_loan = obj.predict(input_df)
-            
+            logger.info("Predicted Loan Amount: %s", predicted_loan[0])
             logger.info(f"Predicted Loan Amount: {predicted_loan[0]}")
             st.success(f"Estimated Loan Amount: ${predicted_loan[0]:,.2f}")
-    except Exception as e:
+        logger.error("Error during prediction: %s", e)
         logger.error(f"Error during prediction: {e}")
         st.error(f"Something went wrong: {str(e)}")
 
