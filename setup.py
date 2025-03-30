@@ -32,6 +32,7 @@ setuptools.setup(
         "streamlit",
         "scikit-learn",
         "matplotlib",
+        "seaborn",
         "python-box==6.0.2",
         "pyYAML",
         "tqdm",

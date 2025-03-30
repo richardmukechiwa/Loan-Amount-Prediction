@@ -1,4 +1,5 @@
 pandas 
+seaborn
 mlflow==2.2.2
 notebook
 numpy
