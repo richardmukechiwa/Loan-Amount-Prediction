@@ -1,12 +1,40 @@
 [build-system]
-requires = ["cmake", "setuptools", "wheel", "pyarrow"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "credit_risk"
 version = "0.0.0"
 description = "A loan amount prediction app"
-authors = [{ name = "richardmukechiwa", email = "mukechiwarichard@gmail.com" }]
 readme = "README.md"
+authors = [
+    { name = "richardmukechiwa", email = "mukechiwarichard@gmail.com" }
+]
 license = { text = "MIT" }
-dependencies = []
+homepage = "https://github.com/richardmukechiwa/Loan-Amount-Prediction"
+repository = "https://github.com/richardmukechiwa/Loan-Amount-Prediction"
+keywords = ["loan", "prediction", "machine learning"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.dependencies]
+pandas = "*"
+mlflow = "==2.2.2"
+notebook = "*"
+numpy = "*"
+streamlit = "*"
+scikit-learn = "*"
+matplotlib = "*"
+python-box = "==6.0.2"
+pyyaml = "*"
+tqdm = "*"
+ensure = "==1.0.2"
+joblib = "*"
+types-pyyaml = "*"
+gdown = "*"
+
+[tool.setuptools.packages.find]
+where = ["src"]
