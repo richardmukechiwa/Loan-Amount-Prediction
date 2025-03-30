@@ -149,15 +149,25 @@ mlflow.set_tracking_uri("https://dagshub.com/richardmukechiwa/Loan-Amount-Predic
 
 
 🧪 Example Input and Output
+
 Input
+
 Income: $50,000
+
 Employment Length: 5 years
+
 Interest Rate: 10%
+
 Percent of Income for Loan: 20%
+
 Credit Length: 10 years
+
 Home Ownership: MORTGAGE
+
 Loan Intent: PERSONAL
+
 Output
+
 Predicted Loan Amount: $15,000
 
 📜 Documentation
