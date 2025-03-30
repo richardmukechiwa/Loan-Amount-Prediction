@@ -168,7 +168,7 @@ Loan Intent: PERSONAL
 
 Output
 
-Predicted Loan Amount: $15,000
+Predicted Loan Amount: $30,000
 
 📜 Documentation
 For detailed documentation, visit the Documentation section in the app.
