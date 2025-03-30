@@ -58,6 +58,7 @@ Loan-Amount-Prediction/ ├── artifacts/ # Contains the trained model and ot
 ---
 
 ## 🖥️ Running the App Locally
+
 ### Prerequisites
 - Python 3.9 or higher
 - Virtual environment (optional but recommended)
@@ -77,9 +78,11 @@ streamlit run loan_app.py
 
 4. Open the app in your browser at
    
-   python```
-   http://localhost:8501
    ```
+   http://localhost:8501
+   
+   ```
+   
 
 🐳 Running with Docker
 
