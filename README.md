@@ -138,10 +138,12 @@ cd Loan-Amount-Prediction
 2. Push datasets or models to DagsHub:
 
    git add data/
-git commit -m "Add dataset"
-git push origin main
+   
+   git commit -m "Add dataset"
+   
+   git push origin main
 
-3. Track experiments using MLflow:
+4. Track experiments using MLflow:
    - Configure MLflow to log experiments to DagsHub:
 
 import mlflow
