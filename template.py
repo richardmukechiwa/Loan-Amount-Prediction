@@ -23,7 +23,7 @@ list_of_files = [
     "params.yaml",
     "schema.yaml",
     "main.py",
-    "loan_app.py",
+    "loanapp.py",
     "train.py",
     "Dockerfile",
     "requirements.txt",
