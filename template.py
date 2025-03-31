@@ -29,8 +29,7 @@ list_of_files = [
     "requirements.txt",
     "setup.py",
     "pyproject.toml",
-     "research/trials.ipynb",
-     "images/",
+     "research/trials.ipynb"
       
 ]
 
