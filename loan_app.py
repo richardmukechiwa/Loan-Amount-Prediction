@@ -77,25 +77,27 @@ def main():
             menu_icon="menu-up", default_index=1
         )
 
-    if selected == "🏠 Home":
+    if selected == "Home":
         st.subheader("Welcome to the Loan Prediction App!")
-        st.write("Use this tool to estimate the loan amount you may qualify for based on your financial profile.")
-    elif selected == "📊 Predict Loan":
+        st.write("Use this tool to estimate the loan amount you may qualify for based on your financial profile like Income, Home ownership, Employment Length, Intention, Rate of interest, Percentage of income for loan, Credit length.")
+    elif selected == "Predict Loan":
         predict_loan_amount()
-    elif selected == "🔧 Train Model":
+    elif selected == "Train Model":
         train_model()
-    elif selected == "📄 Documentation":
-        st.subheader("📄 Documentation")
-        st.write("This app predicts the loan amount based on user-provided financial details.")
-    elif selected == "💻 Source Code":
-        st.subheader("💻 Source Code")
+    elif selected == "Documentation":
+        st.subheader(" Documentation")
+        st.write("This app predicts the loan amount based on user-provided financial details. It uses a machine learning model trained on historical loan data, and the prediction is based on user inputs such as income, employment length, interest rate, percentage of income for loan, credit length, home ownership, and loan intent.")
+        st.write("The model is trained using a Random Forest Regressor and the training process is logged using Dagshub and MLflow.")
+    
+    elif selected == " Source Code":
+        st.subheader("Source Code")
         st.write("Check out the source code on GitHub: [Loan Amount Prediction Repo](https://github.com/richardmukechiwa/Loan-Amount-Prediction)")
-    elif selected == "ℹ️ About":
-        st.subheader("ℹ️ About the App")
-        st.write("This application helps users estimate the loan amount they may qualify for based on their financial profile.")
-    elif selected == "📧 Contact":
-        st.subheader("📧 Contact Information")
-        st.write("For inquiries, reach out via email at [mukechiwarichard@gmail.com](mailto:mukechiwarichard@gmail.com)")
+    elif selected == "About":
+        st.subheader("About the App")
+        st.write("This application helps users like banks, financial institutions, and individuals to estimate the loan amount they may qualify for based on their financial profile.")
+    elif selected == "Contact":
+        st.subheader("Contact Information")
+        st.write("For inquiries, reach out via email at [mukechiwarichard@gmail.com](mailto:mukechiwarichard@gmail.com) and LinkedIn [Richard Mukechiwa](https://www.linkedin.com/in/richard-mukechi/)")
 
 if __name__ == "__main__":
     main()

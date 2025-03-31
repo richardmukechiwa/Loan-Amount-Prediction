@@ -132,7 +132,7 @@ How to Use DagsHub in This Project
 
 1. Clone the DagsHub repository:
 
-dagshub clone richardm/Loan-Amount-Prediction
+dagshub clone richardmukechiwa/Loan-Amount-Prediction
 cd Loan-Amount-Prediction
 
 2. Push datasets or models to DagsHub:
