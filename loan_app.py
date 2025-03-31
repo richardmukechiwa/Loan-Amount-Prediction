@@ -64,7 +64,7 @@ def predict_loan_amount():
 # Main App Layout
 def main():
     # Header with background image
-    st.image("finance.jpg", use_container_width=True)
+    st.image("images/finance.jpg", use_container_width=True)
     st.markdown("""
     <h1 style='text-align: center; color: #1f4037;'>Loan Amount Prediction App</h1>
     """, unsafe_allow_html=True)
