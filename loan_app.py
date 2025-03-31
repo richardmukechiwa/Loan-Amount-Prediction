@@ -58,7 +58,7 @@ def predict_loan_amount():
 
 def main():
     """Main function to run the Streamlit app."""
-    st.image("finance.jpg", use_container_width=True)
+    st.image("images/finance.jpg", use_container_width=True)
     
     st.markdown(
         """
