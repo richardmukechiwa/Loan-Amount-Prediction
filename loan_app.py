@@ -13,8 +13,8 @@ logger = logging.getLogger(__name__)
 def train_model():
     """Retrains the loan amount prediction model with user confirmation."""
     try:
-        # Ask for user confirmation before training
-        confirm = st.confirm("Are you sure you want to retrain the model? This may take some time.")
+        st.warning("Are you sure you want to retrain the model? This may take some time.")
+        confirm = st.button("✅ Yes, Retrain Model")
         
         if confirm:
             with st.spinner("Training the model... ⏳"):
@@ -22,7 +22,7 @@ def train_model():
             logger.info("Training completed successfully.")
             st.success("✅ Model Training Successful!")
         else:
-            st.warning("Training canceled.")
+            st.info("Training not started.")
     
     except Exception as e:
         logger.error("Error during training: %s", e)
@@ -73,7 +73,7 @@ def predict_loan_amount():
 # Main App Layout
 def main():
     # Header with background image
-    st.image("images/finance.jpg", use_container_width=True)
+    st.image("finance.jpg", use_container_width=True)
     st.markdown("""
     <h1 style='text-align: center; color: #1f4037;'>Loan Amount Prediction App</h1>
     """, unsafe_allow_html=True)
