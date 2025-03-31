@@ -8,10 +8,6 @@ from credit_risk.pipeline.prediction import PredictionPipeline
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Load and display the image
-st.image("finance.jpg", use_column_width=True)
-
-# Train the model
 def train_model():
     """Retrains the loan amount prediction model."""
     try:
@@ -62,7 +58,8 @@ def predict_loan_amount():
 
 def main():
     """Main function to run the Streamlit app."""
-    # Add a visually appealing title with a gradient background
+    st.image("finance.jpg", use_container_width=True)
+    
     st.markdown(
         """
         <style>
@@ -81,7 +78,6 @@ def main():
         unsafe_allow_html=True,
     )
 
-    # Sidebar Navigation
     st.sidebar.title("Navigation")
     option = st.sidebar.radio("Select an option:", [
         "Predict Loan Amount",
@@ -93,7 +89,6 @@ def main():
         "Exit"
     ])
 
-    # Handle navigation options
     if option == "Predict Loan Amount":
         st.subheader("📊 Predict Loan Amount")
         st.write("Provide your financial details to estimate the loan amount you may qualify for.")
