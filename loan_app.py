@@ -1,15 +1,16 @@
 import os
 import logging
 import streamlit as st
-import joblib
+import plotly.express as px
+from streamlit_option_menu import option_menu
 from credit_risk.pipeline.prediction import PredictionPipeline
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Train Model Function
 def train_model():
-    """Retrains the loan amount prediction model."""
     try:
         os.system("python main.py")
         logger.info("Training completed successfully.")
@@ -18,99 +19,84 @@ def train_model():
         logger.error("Error during training: %s", e)
         st.error(f"Training failed: {str(e)}")
 
+# Loan Prediction Function
 def predict_loan_amount():
-    """Takes user input and predicts the loan amount they can receive."""
-    try:
-        st.subheader("Enter Details for Loan Amount Prediction")
+    st.subheader("📊 Enter Your Details")
 
-        # Numerical Inputs
+    col1, col2 = st.columns(2)
+    
+    with col1:
         Income = st.number_input("Income ($)", min_value=0.0, step=100.0)
         Emp_length = st.number_input("Employment Length (Years)", min_value=0.0, step=1.0)
         Rate = st.number_input("Interest Rate (%)", min_value=0.0, step=0.1)
-        Percent_income = st.number_input("Percent of Income for Loan (%)", min_value=0.0, step=0.1)
-        Cred_length = st.number_input("Credit Length (Years)", min_value=0.0, step=1.0)
-
-        # Categorical Inputs
-        Home = st.selectbox("Home Ownership", ["MORTGAGE", "RENT", "OWN", "OTHER"])
-        Intent = st.selectbox("Loan Intent", ["PERSONAL", "DEBTCONSOLIDATION", "EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "VENTURE"])
-
-        if st.button("Predict Loan Amount"):
-            input_data = {
-                "Income": Income,
-                "Emp_length": Emp_length,
-                "Rate": Rate,
-                "Percent_income": Percent_income,
-                "Cred_length": Cred_length,
-                "Home": Home,
-                "Intent": Intent
-            }
-
-            logger.info("Received input data: %s", input_data)
-
-            obj = PredictionPipeline()
-            predicted_loan = obj.predict(input_data)
-            logger.info("Predicted Loan Amount: %s", predicted_loan[0])
-            st.success(f"Estimated Loan Amount: ${predicted_loan[0]:,.2f}")
-
-    except Exception as e:
-        logger.error("Error during prediction: %s", e)
-        st.error(f"Something went wrong: {str(e)}")
-
-def main():
-    """Main function to run the Streamlit app."""
-    st.image("images/finance.jpg", use_container_width=True)
     
-    st.markdown(
-        """
-        <style>
-        .main-title {
-            background: linear-gradient(to right, #1f4037, #99f2c8);
-            color: white;
-            padding: 10px;
-            border-radius: 10px;
-            text-align: center;
+    with col2:
+        Percent_income = st.number_input("% of Income for Loan", min_value=0.0, step=0.1)
+        Cred_length = st.number_input("Credit Length (Years)", min_value=0.0, step=1.0)
+        Home = st.selectbox("Home Ownership", ["MORTGAGE", "RENT", "OWN", "OTHER"])
+    
+    Intent = st.selectbox("Loan Intent", ["PERSONAL", "DEBTCONSOLIDATION", "EDUCATION", "HOMEIMPROVEMENT", "MEDICAL", "VENTURE"])
+
+    if st.button("💰 Predict Loan Amount"):
+        input_data = {
+            "Income": Income,
+            "Emp_length": Emp_length,
+            "Rate": Rate,
+            "Percent_income": Percent_income,
+            "Cred_length": Cred_length,
+            "Home": Home,
+            "Intent": Intent
         }
-        </style>
-        <div class="main-title">
-            <h1>Loan Amount Prediction App</h1>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+        logger.info("Received input data: %s", input_data)
 
-    st.sidebar.title("Navigation")
-    option = st.sidebar.radio("Select an option:", [
-        "Predict Loan Amount",
-        "Train Model",
-        "View Documentation",
-        "View Source Code",
-        "About",
-        "Contact Us",
-        "Exit"
-    ])
+        obj = PredictionPipeline()
+        predicted_loan = obj.predict(input_data)
+        logger.info("Predicted Loan Amount: %s", predicted_loan[0])
+        
+        # Loan Prediction Visualization
+        fig = px.bar(x=["Minimum Loan", "Predicted Loan", "Maximum Loan"],
+                     y=[predicted_loan[0]*0.8, predicted_loan[0], predicted_loan[0]*1.2],
+                     title="Estimated Loan Amount Range", color_discrete_sequence=["#1f77b4"])
+        
+        st.plotly_chart(fig, use_container_width=True)
+        st.success(f"Estimated Loan Amount: ${predicted_loan[0]:,.2f}")
 
-    if option == "Predict Loan Amount":
-        st.subheader("📊 Predict Loan Amount")
-        st.write("Provide your financial details to estimate the loan amount you may qualify for.")
+# Main App Layout
+def main():
+    # Header with background image
+    st.image("finance.jpg", use_container_width=True)
+    st.markdown("""
+    <h1 style='text-align: center; color: #1f4037;'>Loan Amount Prediction App</h1>
+    """, unsafe_allow_html=True)
+
+    # Sidebar Navigation
+    with st.sidebar:
+        selected = option_menu(
+            "Navigation", ["🏠 Home", "📊 Predict Loan", "🔧 Train Model", "📄 Documentation", "💻 Source Code", "ℹ️ About", "📧 Contact"],
+            icons=["house", "graph-up", "wrench", "file-earmark-text", "code", "info-circle", "envelope"],
+            menu_icon="menu-up", default_index=1
+        )
+
+    if selected == "🏠 Home":
+        st.subheader("Welcome to the Loan Prediction App!")
+        st.write("Use this tool to estimate the loan amount you may qualify for based on your financial profile.")
+    elif selected == "📊 Predict Loan":
         predict_loan_amount()
-    elif option == "Train Model":
-        st.subheader("🔧 Train the Model")
-        st.write("Retrain the loan prediction model with updated data.")
+    elif selected == "🔧 Train Model":
         train_model()
-    elif option == "View Documentation":
+    elif selected == "📄 Documentation":
         st.subheader("📄 Documentation")
-        st.write("This app predicts the loan amount a borrower can receive based on various financial factors.")
-    elif option == "View Source Code":
+        st.write("This app predicts the loan amount based on user-provided financial details.")
+    elif selected == "💻 Source Code":
         st.subheader("💻 Source Code")
         st.write("Check out the source code on GitHub: [Loan Amount Prediction Repo](https://github.com/richardmukechiwa/Loan-Amount-Prediction)")
-    elif option == "About":
+    elif selected == "ℹ️ About":
         st.subheader("ℹ️ About the App")
         st.write("This application helps users estimate the loan amount they may qualify for based on their financial profile.")
-    elif option == "Contact Us":
+    elif selected == "📧 Contact":
         st.subheader("📧 Contact Information")
         st.write("For inquiries, reach out via email at [mukechiwarichard@gmail.com](mailto:mukechiwarichard@gmail.com)")
-    elif option == "Exit":
-        st.write("Thank you for using the Loan Amount Prediction App!")
-        
+
 if __name__ == "__main__":
     main()
+
