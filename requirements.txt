@@ -13,5 +13,6 @@ ensure==1.0.2
 joblib
 types-PyYAML
 plotly
+streamlit-option-menu
 
   .
