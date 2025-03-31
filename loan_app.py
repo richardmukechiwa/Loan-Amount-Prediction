@@ -8,7 +8,10 @@ from credit_risk.pipeline.prediction import PredictionPipeline
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-#train the model
+# Load and display the image
+st.image("finance.jpg", use_column_width=True)
+
+# Train the model
 def train_model():
     """Retrains the loan amount prediction model."""
     try:
@@ -116,4 +119,3 @@ def main():
         
 if __name__ == "__main__":
     main()
-
