@@ -6,7 +6,7 @@ WORKDIR /loan_app
 
 # Copy the requirements file and install dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Copy the entire project into the container
 COPY . .
