@@ -1,23 +1,18 @@
-# Use an official Python image as base
+# Use the official Python image as the base
 FROM python:3.9
 
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /loan_app
 
-# Copy the requirements file
+# Copy the requirements file and install dependencies
 COPY requirements.txt .
-
-# Debugging step: Print files inside the container
-RUN ls -lah
-
-# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the app
+# Copy the entire project into the container
 COPY . .
 
-# Expose Streamlit port
+# Expose the Streamlit default port
 EXPOSE 8501
 
-# Run Streamlit app
-CMD ["streamlit", "run", "loan_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# Command to run Streamlit
+CMD ["streamlit", "run", "loan_pp.py", "--server.port=8501", "--server.address=0.0.0.0"]
