@@ -1,3 +1,6 @@
+
+## Loan Amount Prediction - End-to-End Machine Learning Project
+
 ## Workflows
 
 1. Update config.yaml
@@ -10,147 +13,81 @@
 8. Update main.py
 9. Update the app.py
 
-# Loan Amount Prediction App
+### 🔍 Problem Statement
+In the financial sector, accurately predicting the amount a client can borrow is critical for mitigating risks and ensuring responsible lending.This project focuses on predicting the loan amount an applicant is likely to receive based on features such as income, credit history, loan term, and more. It demonstrates my ability to handle real-world financial data, perform data preprocessing, build regression models, and deploy the final solution as an interactive web app using Streamlit.
 
-[Loan Amount Prediction](https://loan-amount-prediction-v5wxdubjubukkct6memh5n.streamlit.app/)
+### 🧰 Tech Stack & Tools
+- **Language**: Python 3
+- **Libraries**: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, XGBoost, imbalanced-learn
+- **Pipeline**: Modular structure with clear separation for data ingestion, transformation, training, evaluation, and prediction
+- **Logging**: Custom logging set up for traceability
+- **Model Tracking**: Pickle for model persistence
+- **App Interface**: Streamlit
 
-## 📖 Overview
-The **Loan Amount Prediction App** is a machine learning-powered web application that predicts the loan amount a borrower may qualify for based on their financial profile. The app is built using **Streamlit** for the frontend and integrates a trained machine learning pipeline for predictions.
+### 📁 Folder Structure
+```
+Loan-Amount-Prediction/
+│
+├── artifacts/                # Stores processed data
+├── credit_risk/             # Core package (data ingestion, transformation, model code)
+│   ├── components/
+│   ├── config/
+│   ├── pipeline/
+│   └── utils.py
+├── notebook/                # Jupyter notebooks for exploration and trials
+├── saved_models/            # Trained model pickle files
+├── static/                  # Visual assets for Streamlit app
+├── templates/               # HTML templates
+├── Dockerfile
+├── app.py                   # Streamlit application
+├── main.py                  # Entry point for training pipeline
+├── requirements.txt
+└── setup.py                 # For packaging
+```
 
+### Key Highlights 
 
-## 🚀 Features
+- __Situation:__ Financial institutions need to assess loan eligibility and amount using applicant data.
+
+- __Task:__ Build a regression model to predict the loan amount using features from a publicly available dataset.
+
+- __Action:__ Performed EDA, cleaned data, encoded categorical variables, and built a Random Forest Regression model. Deployed the app using Streamlit and hosted it on Streamlit Cloud.
+
+- __Result:__ Achieved an R² score of 0.99 on test data, indicating a strong fit. The model can assist loan officers in making informed decisions.
+
+### 🚀 How to Run
+1. Clone the repository
+```bash
+git clone https://github.com/richardmukechiwa/Loan-Amount-Prediction.git
+```
+2. Navigate to the directory and install dependencies:
+```bash
+cd Loan-Amount-Prediction
+pip install -r requirements.txt
+```
+3. Train the model:
+```bash
+python main.py
+```
+4. Launch the Streamlit app:
+```bash
+streamlit run app.py
+```
+
+### Features of the Streamlit App
+
 - **Loan Amount Prediction**: Users can input their financial details to estimate the loan amount they may qualify for.
 - **Model Training**: Retrain the machine learning model with updated data directly from the app.
 - **Documentation**: View detailed information about the app and its functionality.
 - **Source Code Access**: Direct link to the GitHub repository for developers.
 - **Contact Information**: Reach out to the developer for inquiries or feedback.
 
----
+##  App Demo
+Here is a preview of the app:
 
-## 🛠️ Technologies Used
-- **Frontend**: [Streamlit](https://streamlit.io/)
-- **Backend**: Python
-- **Machine Learning**: Scikit-learn
-- **Model Serialization**: Joblib
-- **Data Handling**: Pandas, NumPy
-- **Deployment**: Docker (optional)
+![Loan Prediction Demo](https://github.com/richardmukechiwa/Datasets/raw/refs/heads/main/Loan-App.mp4)
 
----
-
-## 📂 Project Structure
-
-Loan-Amount-Prediction/ ├── artifacts/ # Contains the trained model and other artifacts │ └── model_trainer/ │ └── model.joblib # Serialized machine learning model ├── src/ # Source code for the app │ └── credit_risk/ │ ├── components/ # ML components (e.g., data ingestion, model trainer) │ ├── pipeline/ # Prediction pipeline │ ├── utils/ # Utility functions ├── config/ # Configuration files │ ├── config.yaml # App configuration │ └── params.yaml # Model parameters ├── research/ # Jupyter notebooks for experimentation │ └── trials.ipynb ├── Dockerfile # Docker configuration for deployment ├── requirements.txt # Python dependencies ├── setup.py # Package setup file ├── pyproject.toml # Build system configuration ├── loan_app.py # Main Streamlit app └── README.md
-
-# Project documentation
-
-
----
-
-## 📊 How It Works
-1. **Prediction**:
-   - Users provide financial details such as income, employment length, interest rate, and loan intent.
-   - The app preprocesses the input data and uses a trained machine learning model to predict the loan amount.
-
-2. **Model Training**:
-   - The app allows retraining of the model using updated data.
-   - The training process is triggered by running `main.py` from the app.
-
----
-
-## 🖥️ Running the App Locally
-
-### Prerequisites
-- Python 3.9 or higher
-- Virtual environment (optional but recommended)
-
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/richardmukechiwa/Loan-Amount-Prediction.git
-   cd Loan-Amount-Prediction
-
-2. Install dependencies:
-
-pip install -r requirements.txt
-
-3. Run the app:
-streamlit run loan_app.py
-
-4. Open the app in your browser at
-   
-   ```
-   http://localhost:8501
-   
-   ```
-   
-
-🐳 Running with Docker
-
-1. Build the Docker image:
-   
-  docker build -t loan-amount-prediction.
-  
-2. Run the Docker container:
-
-   docker run -p 8501:8501 loan-amount-prediction
-
-3. Access the app at
-   ```python
-   http://localhost:8501
-   ```
-
-📁 Key Files
-
-- loan_app.py: Main Streamlit app for user interaction.
-
-- artifacts/model_trainer/model.joblib: Trained machine learning model.
-  
-- src/credit_risk/pipeline/prediction.py: Prediction pipeline for processing input and 
-  generating predictions.
-
-- main.py: Script for training the machine learning model.
-  
-- requirements.txt: List of Python dependencies.
-  
-- Dockerfile: Configuration for containerizing the app.
-
-📊 DagsHub Integration
-
-This project uses DagsHub for:
-
-- Dataset Versioning: Track and version datasets used for training.
-
-- Model Versioning: Store and version trained models for reproducibility.
-  
-- Experiment Tracking: Log and visualize experiments, including hyperparameters and metrics.
-  
-  How to Access the DagsHub Repository
-  
-- You can access the DagsHub repository for this project here: DagsHub Repository
-
-How to Use DagsHub in This Project
-
-1. Clone the DagsHub repository:
-
-dagshub clone richardmukechiwa/Loan-Amount-Prediction
-cd Loan-Amount-Prediction
-
-2. Push datasets or models to DagsHub:
-
-   git add data/
-   
-   git commit -m "Add dataset"
-   
-   git push origin main
-
-4. Track experiments using MLflow:
-   - Configure MLflow to log experiments to DagsHub:
-
-import mlflow
-mlflow.set_tracking_uri("https://dagshub.com/richardmukechiwa/Loan-Amount-Prediction.mlflow")  
-
-
-🧪 Example Input and Output
+## Example Input and Output
 
 Input
 
@@ -172,24 +109,34 @@ Output
 
 Predicted Loan Amount: $30,000
 
-📜 Documentation
-For detailed documentation, visit the Documentation section in the app.
 
-🔗 Links
-GitHub Repository: Loan Amount Prediction Repo
-Contact: mukechiwarichard@gmail.com
 
-🤝 Contributing
-Contributions are welcome! Please fork the repository and submit a pull request.
+### Track experiments using MLflow:
+   - Configure MLflow to log experiments to DagsHub:
 
-📧 Contact
-For inquiries, reach out via email at mukechiwarichard@gmail.com.
+import mlflow
+mlflow.set_tracking_uri("https://dagshub.com/richardmukechiwa/Loan-Amount-Prediction.mlflow") 
 
-📝 License
+
+### Docker Support
+Build the Docker image and run the app in a container:
+```bash
+docker build -t loan_app .
+docker run -p 8501:8501 loan_app
+```
+
+### Model Performance
+- ML Model: Random Forest Regressor
+- R² Score: 0.99 on test data
+- RMSE: ~3000 USD
+
+###  Acknowledgements
+Special thanks to mentors Krish Naik, Bappy Hamed, and Kasim Ali for their invaluable guidance throughout this project.
+
+###  Connect
+For collaboration or questions, reach out on [LinkedIn](https://www.linkedin.com/in/richardmukechiwa/)
+
+
+### License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-
-
----
-
 
