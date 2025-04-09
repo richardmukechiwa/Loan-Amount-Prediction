@@ -13,10 +13,10 @@
 8. Update main.py
 9. Update the app.py
 
-### 🔍 Problem Statement
+### Problem Statement
 In the financial sector, accurately predicting the amount a client can borrow is critical for mitigating risks and ensuring responsible lending.This project focuses on predicting the loan amount an applicant is likely to receive based on features such as income, credit history, loan term, and more. It demonstrates my ability to handle real-world financial data, perform data preprocessing, build regression models, and deploy the final solution as an interactive web app using Streamlit.
 
-### 🧰 Tech Stack & Tools
+### Tech Stack & Tools
 - **Language**: Python 3
 - **Libraries**: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, XGBoost, imbalanced-learn
 - **Pipeline**: Modular structure with clear separation for data ingestion, transformation, training, evaluation, and prediction
@@ -24,7 +24,7 @@ In the financial sector, accurately predicting the amount a client can borrow is
 - **Model Tracking**: Pickle for model persistence
 - **App Interface**: Streamlit
 
-### 📁 Folder Structure
+### Folder Structure
 ```
 Loan-Amount-Prediction/
 │
@@ -55,7 +55,7 @@ Loan-Amount-Prediction/
 
 - __Result:__ Achieved an R² score of 0.99 on test data, indicating a strong fit. The model can assist loan officers in making informed decisions.
 
-### 🚀 How to Run
+###  How to Run
 1. Clone the repository
 ```bash
 git clone https://github.com/richardmukechiwa/Loan-Amount-Prediction.git
@@ -85,7 +85,7 @@ streamlit run app.py
 ##  App Demo
 Here is a preview of the app:
 
-![Loan Prediction Demo](https://github.com/richardmukechiwa/Datasets/raw/refs/heads/main/Loan-App.mp4)
+[Loan Prediction Demo](https://github.com/richardmukechiwa/Datasets/raw/refs/heads/main/Loan-App.mp4)
 
 ## Example Input and Output
 
